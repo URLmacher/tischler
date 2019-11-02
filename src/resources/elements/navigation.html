@@ -1,0 +1,9 @@
+<template>
+  <nav class="navigation">
+    <ul>
+      <li repeat.for="nav of mainLinks" class="${nav.isActive ? 'active' : ''}">
+        <a href.bind="nav.href">${nav.title}</a>
+      </li>
+    </ul>
+  </nav>
+</template>

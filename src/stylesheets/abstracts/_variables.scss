@@ -1,7 +1,20 @@
+
 // -----------------------------------------------------------------------------
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
 
+/// Main
+/// @type Color
+$color-main: #CFC9C9!default;
+$color-background-header: #303030;
+$color-accent-header: #888888;
+
+/// Background
+/// @type Gradient
+$gradient-background:radial-gradient(circle, rgba(0, 0, 0, 0.8799894957983193) 0%, #808080 86%);
+
+$border-radius-main: 2px;
+$box-shadow-main: 15px 15px 15px 0px rgba(0,0,0,0.75);
 
 
 
@@ -13,8 +26,10 @@ $text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvet
 /// Code (monospace) font family
 /// @type List
 $code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
-
-
+$font-header-title:  'Barlow', sans-serif;
+$font-weight-header-title:  100;
+ $font-header-subtitle:'Barlow', sans-serif;
+$font-weight-header-title:100;
 
 
 
@@ -37,7 +52,6 @@ $mid-grey: rgb(153, 153, 153) !default;
 /// Dark grey
 /// @type Color
 $dark-grey: rgb(68, 68, 68) !default;
-
 
 
 
