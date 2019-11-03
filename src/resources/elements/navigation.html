@@ -1,9 +1,18 @@
 <template>
-  <nav class="navigation">
-    <ul>
-      <li repeat.for="nav of mainLinks" class="${nav.isActive ? 'active' : ''}">
-        <a href.bind="nav.href">${nav.title}</a>
-      </li>
-    </ul>
+  <nav class="navigation ${navOpen ? 'navigation--open' : ''}">
+    <div class="navigation__nav ${navOpen ? 'navigation__nav--open' : ''}">
+      <ul class="navlinks-main">
+        <li class="navlinks-main__nav-li" repeat.for="mainLink of mainLinks" class="${nav.isActive ? 'active' : ''}">
+          <a class="navlinks-main__nav-a" href.bind="nav.href">${mainLink.title}</a>
+        </li>
+      </ul>
+      <hr class="navigation__hr">
+      <ul class="navlinks-sub">
+        <li class="navlinks-sub__nav-li" repeat.for="subLink of subLinks" class="${nav.isActive ? 'active' : ''}">
+          <a class="navlinks-sub__nav-a" href.bind="nav.href">${subLink}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="navigation__btn-open" click.trigger="openNav()"></div>
   </nav>
 </template>

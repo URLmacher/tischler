@@ -5,16 +5,17 @@
     position: absolute;
     right: 10rem;
     top:20%;
-    background-color: $color-background-header;
+    background-color: $color-background-dark;
     height: 40vh;
     width: 30vw;
     color: $color-main;
     text-align: center;
     border-radius: $border-radius-main;
+    z-index: 2;
     
     &__title{
         font-size: 6rem;
-        border-bottom: .6rem $color-accent-header solid;
+        border-bottom: .6rem $color-accent solid;
         line-height: 1;
         width: min-content;
         margin: auto;

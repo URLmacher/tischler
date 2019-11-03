@@ -1,5 +1,6 @@
 .background {
   background-color: $color-main;
+  position: relative;
   margin: 5rem;
   height: calc(100vh - 10rem);
   border-radius: $border-radius-main;

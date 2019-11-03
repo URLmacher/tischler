@@ -17,6 +17,7 @@ export class App {
       this.currentSiteTitle = event.instruction.config.title;
     });
   }
+  
   configureRouter(config, router) {
     this.router = router;
     config.title = 'Tischler';
@@ -31,9 +32,23 @@ export class App {
       {
         route: 'products',
         name: 'products',
-        moduleId: PLATFORM.moduleName('pages/products'),
+        moduleId: PLATFORM.moduleName('pages/products/products'),
         nav: true,
         title: 'Leistungen'
+      },
+      {
+        route: 'about',
+        name: 'about',
+        moduleId: PLATFORM.moduleName('pages/about/about'),
+        nav: true,
+        title: 'Über uns'
+      },
+      {
+        route: 'contact',
+        name: 'contact',
+        moduleId: PLATFORM.moduleName('pages/contact/contact'),
+        nav: true,
+        title: 'Kontakt'
       }
     ]);
   }
