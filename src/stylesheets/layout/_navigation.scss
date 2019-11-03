@@ -23,6 +23,7 @@
     visibility: hidden;
     opacity: 0;
     z-index: 18;
+    position: relative;
 
     &--open {
       width: 25%;
@@ -45,6 +46,19 @@
     top: 50%;
     transform: translateY(-50%);
     background-image: url('../assets/icons/menu-24px.svg');
+    background-size: cover;
+    cursor: pointer;
+  }
+
+  &__btn-close {
+    position: absolute;
+    height: 4rem;
+    width: 4rem;
+    z-index: 20;
+    margin-left: 0.5rem;
+    top:.5rem;
+    right: .5rem;
+    background-image: url('../assets/icons/close-24px.svg');
     background-size: cover;
     cursor: pointer;
   }
@@ -73,9 +87,21 @@
     &:hover {
       color: $color-main;
       text-decoration: none;
+      border-bottom: 2px solid $color-accent;
+    }
+    &:focus {
+      color: $color-main;
+      text-decoration: none;
+      border-bottom: 2px solid $color-accent;
+    }
+    &:active {
+      color: $color-main;
+      text-decoration: none;
+      border-bottom: 2px solid $color-accent;
     }
   }
 }
+
 .navlinks-sub {
   height: 50%;
   display: flex;

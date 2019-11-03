@@ -1,9 +1,10 @@
 <template>
   <nav class="navigation ${navOpen ? 'navigation--open' : ''}">
-    <div class="navigation__nav ${navOpen ? 'navigation__nav--open' : ''}">
+    <div class="navigation__nav ${navOpen ? 'navigation__nav--open' : ''}" ref="navbar">
+      <div class="navigation__btn-close" click.trigger="closeNav($event)"></div>
       <ul class="navlinks-main">
         <li class="navlinks-main__nav-li" repeat.for="mainLink of mainLinks" class="${nav.isActive ? 'active' : ''}">
-          <a class="navlinks-main__nav-a" href.bind="nav.href">${mainLink.title}</a>
+          <a class="navlinks-main__nav-a" href.bind="mainLink.href">${mainLink.title}</a>
         </li>
       </ul>
       <hr class="navigation__hr">
@@ -13,6 +14,6 @@
         </li>
       </ul>
     </div>
-    <div class="navigation__btn-open" click.trigger="openNav()"></div>
   </nav>
+  <div class="navigation__btn-open" click.trigger="openNav()" ref="openNavBtn"></div>
 </template>
