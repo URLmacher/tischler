@@ -1,35 +1,44 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
-.header{
-    position: absolute;
-    right: 10rem;
-    top:20%;
-    background-color: $color-background-dark;
-    height: 40vh;
-    width: 30vw;
-    color: $color-main;
-    text-align: center;
-    border-radius: $border-radius-main;
-    z-index: 2;
-    
-    &__title{
-        font-size: 6rem;
-        border-bottom: .6rem $color-accent solid;
-        line-height: 1;
-        width: min-content;
-        margin: auto;
-        margin-top: 2rem;
-        font-family: $font-header-title;
-        font-weight: $font-weight-header-title;
-    }
+.header {
+  position: absolute;
+  right: 10rem;
+  top: 20%;
+  background-color: $color-background-dark;
+  height: 40vh;
+  width: 30vw;
+  color: $color-main;
+  text-align: center;
+  border-radius: $border-radius-main;
+  z-index: 2;
 
-    &__subtitle{
-        text-align: right;
-        width:22vw;
-        margin: auto;
-        margin-top: .5rem;
-        font-family: $font-header-subtitle;
-        font-weight: $font-weight-header-title;
+  &--smaller {
+    height: 18vh;
+    width: 20vw;
+  }
+
+  &__title {
+    font-size: 6rem;
+    border-bottom: 0.6rem $color-accent solid;
+    line-height: 1;
+    width: min-content;
+    margin: auto;
+    margin-top: 2rem;
+    font-family: $font-header-title;
+    font-weight: $font-weight-header-title;
+
+    &--smaller {
+      font-size: 4rem;
     }
+  }
+
+  &__subtitle {
+    text-align: right;
+    width: 22vw;
+    margin: auto;
+    margin-top: 0.5rem;
+    font-family: $font-header-subtitle;
+    font-weight: $font-weight-header-title;
+  }
 }

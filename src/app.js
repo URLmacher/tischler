@@ -15,6 +15,7 @@ export class App {
   attached() {
     this.ea.subscribe(RouterEvent.Complete, event => {
       this.currentSiteTitle = event.instruction.config.title;
+      this.currentSiteSubtitle = event.instruction.config.subtitle;
     });
   }
 
@@ -27,7 +28,8 @@ export class App {
         name: 'home',
         moduleId: PLATFORM.moduleName('pages/home/home'),
         nav: true,
-        title: 'Home'
+        title: 'Tischler',
+        subtitle: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.'
       },
       {
         route: 'products',
