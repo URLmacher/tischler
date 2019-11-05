@@ -1,3 +1,13 @@
 <template>
-  <h1>${message}</h1>
+  <require from="resources/elements/product-card"></require>
+  <div class="products">
+    <product-card
+      repeat.for="product of products"
+      title.bind="product.title"
+      img.bind="product.img"
+      bodytitle.bind="product.bodytitle"
+      bodytext.bind="product.bodytext"
+    >
+    </product-card>
+  </div>
 </template>

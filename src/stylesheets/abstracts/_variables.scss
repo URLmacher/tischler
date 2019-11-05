@@ -1,24 +1,23 @@
-
 // -----------------------------------------------------------------------------
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
 
 /// Main
 /// @type Color
-$color-main: #CFC9C9!default;
+$color-main: #cfc9c9 !default;
 $color-background-dark: #303030;
+$color-background-bright: #fcfcfc;
 $color-background-overlay: #30303071;
+$color-text-dark: #444343;
+$color-text-medium: #616060;
 $color-accent: #888888;
 
 /// Background
 /// @type Gradient
-$gradient-background:radial-gradient(circle, rgba(0, 0, 0, 0.8799894957983193) 0%, #808080 86%);
+$gradient-background: radial-gradient(circle, rgba(0, 0, 0, 0.8799894957983193) 0%, #808080 86%);
 
 $border-radius-main: 2px;
-$box-shadow-main: 15px 15px 15px 0px rgba(0,0,0,0.75);
-
-
-
+$box-shadow-main: 15px 15px 15px 0px rgba(0, 0, 0, 0.75);
 
 /// Regular font family
 /// @type List
@@ -27,12 +26,14 @@ $text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvet
 /// Code (monospace) font family
 /// @type List
 $code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
-$font-header-title:  'Barlow', sans-serif;
-$font-weight-header-title:  100;
- $font-header-subtitle:'Barlow', sans-serif;
-$font-weight-header-title:100;
-
-
+$font-header-title: 'Barlow', sans-serif;
+$font-weight-header-title: 100;
+$font-header-subtitle: 'Barlow', sans-serif;
+$font-weight-header-title: 100;
+$font-text-title: 'Lato', sans-serif;
+$font-weight-text-title: 600;
+$font-text-body: 'Lato', sans-serif;
+$font-weight-text-body: 400;
 
 /// Copy text color
 /// @type Color
@@ -54,16 +55,9 @@ $mid-grey: rgb(153, 153, 153) !default;
 /// @type Color
 $dark-grey: rgb(68, 68, 68) !default;
 
-
-
-
 /// Container's maximum width
 /// @type Length
 $max-width: 1180px !default;
-
-
-
-
 
 /// Breakpoints map
 /// @prop {String} keys - Keys are identifiers mapped to a given length
@@ -71,13 +65,8 @@ $max-width: 1180px !default;
 $breakpoints: (
   'small': 320px,
   'medium': 768px,
-  'large': 1024px,
+  'large': 1024px
 ) !default;
-
-
-
-
-
 
 /// Relative or absolute URL where all assets are served from
 /// @type String

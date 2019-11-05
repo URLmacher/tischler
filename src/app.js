@@ -17,7 +17,7 @@ export class App {
       this.currentSiteTitle = event.instruction.config.title;
     });
   }
-  
+
   configureRouter(config, router) {
     this.router = router;
     config.title = 'Tischler';
