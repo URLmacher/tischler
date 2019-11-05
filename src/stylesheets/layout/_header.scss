@@ -19,6 +19,7 @@
   }
 
   &__title {
+    white-space: nowrap;
     font-size: 6rem;
     border-bottom: 0.6rem $color-accent solid;
     line-height: 1;

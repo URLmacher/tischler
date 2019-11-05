@@ -10,12 +10,14 @@ export class App {
 
   constructor(ea) {
     this.ea = ea;
+    this.navOpen = false;
   }
 
   attached() {
     this.ea.subscribe(RouterEvent.Complete, event => {
       this.currentSiteTitle = event.instruction.config.title;
       this.currentSiteSubtitle = event.instruction.config.subtitle;
+      this.navOpen = false;
     });
   }
 

@@ -2,9 +2,9 @@ import { bindable } from 'aurelia-framework';
 
 export class Navigation {
   @bindable mainLinks;
+  @bindable navOpen;
 
   constructor() {
-    this.navOpen = false;
     this.subLinks = ['Impressum', 'Anfahrt', 'Datenschutz', 'AGB'];
   }
 
