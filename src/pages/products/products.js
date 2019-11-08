@@ -16,6 +16,13 @@ export class Products {
         bodytitle: 'Dolorum anal',
         bodytext:
           'Generiere einfach soviel Lorem Ipsum Text wie du brauchst, kopiere und füge ihn in dein Layout als vorübergehenden Platzhalter ein. Somit sieht das Projekt ein Stückchen vollständiger aus als zuvor. Viel Spaß dabei.'
+      },
+      {
+        title: 'Abholzen',
+        img: imageContext('./assets/images/img_card_placeholder.jpg'),
+        bodytitle: 'Dolorum anal',
+        bodytext:
+          'Generiere einfach soviel Lorem Ipsum Text wie du brauchst, kopiere und füge ihn in dein Layout als vorübergehenden Platzhalter ein. Somit sieht das Projekt ein Stückchen vollständiger aus als zuvor. Viel Spaß dabei.'
       }
     ];
   }

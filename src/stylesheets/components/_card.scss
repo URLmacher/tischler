@@ -1,18 +1,19 @@
 .product-card {
   height: 90%;
-  width: 33%;
+  width: 30%;
   background-color: $color-background-bright;
   margin-right: 3rem;
   position: relative;
   border-radius: $border-radius-main;
 
   &:first-child {
-    margin-left: 3rem;
+    margin-left: 0rem;
   }
   &:last-child {
     margin-right: 0;
   }
 }
+
 .product-card-header {
   height: 30%;
   width: 100%;
