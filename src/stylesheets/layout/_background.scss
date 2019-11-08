@@ -8,11 +8,24 @@
   display: flex;
   justify-content: left;
   align-items: center;
+   background-image: url('../assets/images/playarea-back.svg');
 
   &__content {
     width: 70%;
     height: calc(100% - 10rem);
     margin-left: 5rem;
-     border-radius: $border-radius-main;
+    border-radius: $border-radius-main;
+  }
+
+  &__logo {
+    width: 10rem;
+    height: 10rem;
+    background-image: url('../assets/icons/logo.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 2.8rem;
+    right: 10.5rem;
+    z-index: 800;
   }
 }

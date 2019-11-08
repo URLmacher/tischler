@@ -4,7 +4,7 @@
       <div class="navigation__btn-close" click.trigger="closeNav($event)"></div>
       <ul class="navlinks-main">
         <li class="navlinks-main__nav-li" repeat.for="mainLink of mainLinks" class="${nav.isActive ? 'active' : ''}">
-          <a class="navlinks-main__nav-a" href.bind="mainLink.href">${mainLink.title}</a>
+          <a class="navlinks-main__nav-a" href.bind="mainLink.href">${mainLink.config.navtitle}</a>
         </li>
       </ul>
       <div class="navigation__hr"></div>

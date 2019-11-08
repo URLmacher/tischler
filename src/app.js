@@ -31,28 +31,33 @@ export class App {
         moduleId: PLATFORM.moduleName('pages/home/home'),
         nav: true,
         title: 'Tischler',
-        subtitle: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.'
+        navtitle: 'Home',
+        subtitle:
+          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.'
       },
       {
         route: 'products',
         name: 'products',
         moduleId: PLATFORM.moduleName('pages/products/products'),
         nav: true,
-        title: 'Leistungen'
+        title: 'Leistungen',
+        navtitle: 'Leistungen'
       },
       {
         route: 'about',
         name: 'about',
         moduleId: PLATFORM.moduleName('pages/about/about'),
         nav: true,
-        title: 'Über uns'
+        title: 'Über uns',
+        navtitle: 'Über uns'
       },
       {
         route: 'contact',
         name: 'contact',
         moduleId: PLATFORM.moduleName('pages/contact/contact'),
         nav: true,
-        title: 'Kontakt'
+        title: 'Kontakt',
+        navtitle: 'Kontakt'
       }
     ]);
   }
