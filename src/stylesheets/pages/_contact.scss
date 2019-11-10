@@ -1,0 +1,42 @@
+.contact {
+  height: 100%;
+  width: 90%;
+  background-color: $color-background-bright;
+  margin-right: 3rem;
+  position: relative;
+  border-radius: $border-radius-main;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  @include mdc-notched-outline-color($color-background-dark);
+
+  &__input {
+    display: block;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+
+    &:first-child {
+      margin-top: 2rem;
+    }
+  }
+
+  &__btn {
+    display: block;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.mdc-text-field {
+  @include mdc-text-field-focused-outline-color($color-background-dark);
+  @include mdc-text-field-hover-outline-color($color-background-dark);
+  @include mdc-text-field-outline-color($color-background-dark);
+  @include mdc-text-field-textarea-stroke-color($color-background-dark);
+  @include mdc-text-field-label-color($color-background-dark);
+  @include mdc-text-field-caret-color($color-background-dark);
+}
+
+.mdc-floating-label {
+  @include mdc-floating-label-ink-color($color-background-dark);
+  font-family: $font-text-body;
+}

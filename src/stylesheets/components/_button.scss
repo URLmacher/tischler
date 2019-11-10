@@ -1,3 +1,12 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
+.mdc-button {
+    @include mdc-button-filled-accessible($color-background-overlay);
+    @include mdc-button-container-fill-color($color-background-dark);
+    @include mdc-button-ink-color($color-background-bright);
+    @include mdc-button-outline-color($color-background-dark);
+    font-family: $font-header-subtitle;
+    @include mdc-states-base-color($color-background-bright);
+    @include mdc-states-hover-opacity(.5);
+}

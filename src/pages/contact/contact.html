@@ -1,3 +1,12 @@
 <template>
-  <h1>${message}</h1>
+  <require from="resources/elements/input-text"></require>
+  <require from="resources/elements/text-area"></require>
+  <require from="resources/elements/button-standard"></require>
+
+ <div class="contact">
+   <input-text class="contact__input" label.bind="inputLabel1"></input-text>
+   <input-text class="contact__input" label.bind="inputLabel2"></input-text>
+   <text-area class="contact__input" label.bind="textAreaLabel"></text-area>
+   <button-standard class="contact__btn" text.bind="buttonText"></button-standard>
+ </div>
 </template>
