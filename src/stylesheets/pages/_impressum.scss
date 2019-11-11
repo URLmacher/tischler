@@ -1,0 +1,33 @@
+.impressum {
+  height: 100%;
+  width: 90%;
+  padding: 4rem;
+  background-color: $color-background-bright;
+  margin-right: 3rem;
+  position: relative;
+  border-radius: $border-radius-main;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  @include mdc-notched-outline-color($color-background-dark);
+
+  &__title {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    line-height: 1;
+    white-space: nowrap;
+    width: min-content;
+    color: $color-text-dark;
+    font-family: $font-header-title;
+    font-weight: $font-weight-header-title;
+    border-bottom: 3px solid $color-accent;
+  }
+
+  &__text {
+    font-size: 1.5rem;
+    margin-left: 2rem;
+    color: $color-text-medium;
+    font-family: $font-text-body;
+    font-weight: $font-weight-text-body;
+  }
+}

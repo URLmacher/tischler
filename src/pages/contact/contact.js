@@ -9,7 +9,7 @@ export class Contact {
   }
 
   attached() {
-    this.serverCall();
+    // this.serverCall();
   }
 
   serverCall() {

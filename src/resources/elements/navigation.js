@@ -5,10 +5,11 @@ export class Navigation {
   @bindable navOpen;
  
   constructor() {
-    this.subLinks = ['Impressum', 'Anfahrt', 'Datenschutz', 'AGB'];
+
   }
 
   attached() {
+    console.log(this.mainLinks);
     document.body.addEventListener('click', e => {
       if (!this.navbar.contains(e.target) && e.target !== this.openNavBtn) this.navOpen = false;
     });

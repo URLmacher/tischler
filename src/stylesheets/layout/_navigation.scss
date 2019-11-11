@@ -103,7 +103,7 @@
 }
 
 .navlinks-sub {
-  height: 50%;
+  height: 40%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -114,7 +114,7 @@
   &__nav-li {
     font-family: $font-header-title;
     font-weight: $font-weight-header-title;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   &__nav-a {
@@ -124,6 +124,17 @@
     &:hover {
       color: $color-main;
       text-decoration: none;
+      border-bottom: 2px solid $color-accent;
+    }
+    &:focus {
+      color: $color-main;
+      text-decoration: none;
+      border-bottom: 2px solid $color-accent;
+    }
+    &:active {
+      color: $color-main;
+      text-decoration: none;
+      border-bottom: 2px solid $color-accent;
     }
   }
 }

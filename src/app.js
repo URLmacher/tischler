@@ -30,6 +30,7 @@ export class App {
         name: 'home',
         moduleId: PLATFORM.moduleName('pages/home/home'),
         nav: true,
+        main: true,
         title: 'Tischler',
         navtitle: 'Home',
         subtitle:
@@ -40,6 +41,7 @@ export class App {
         name: 'products',
         moduleId: PLATFORM.moduleName('pages/products/products'),
         nav: true,
+        main: true,
         title: 'Leistungen',
         navtitle: 'Leistungen'
       },
@@ -48,6 +50,7 @@ export class App {
         name: 'about',
         moduleId: PLATFORM.moduleName('pages/about/about'),
         nav: true,
+        main: true,
         title: 'Über uns',
         navtitle: 'Über uns'
       },
@@ -56,8 +59,36 @@ export class App {
         name: 'contact',
         moduleId: PLATFORM.moduleName('pages/contact/contact'),
         nav: true,
+        main: true,
         title: 'Kontakt',
         navtitle: 'Kontakt'
+      },
+      {
+        route: 'impressum',
+        name: 'impressum',
+        moduleId: PLATFORM.moduleName('subpages/impressum'),
+        nav: true,
+        sub: true,
+        title: 'Impressum',
+        navtitle: 'Impressum'
+      },
+      {
+        route: 'datenschutz',
+        name: 'datenschutz',
+        moduleId: PLATFORM.moduleName('subpages/datenschutz'),
+        nav: true,
+        sub: true,
+        title: 'Datenschutz',
+        navtitle: 'Datenschutz'
+      },
+      {
+        route: 'anfahrt',
+        name: 'anfahrt',
+        moduleId: PLATFORM.moduleName('subpages/anfahrt'),
+        nav: true,
+        sub: true,
+        title: 'Anfahrt',
+        navtitle: 'Anfahrt'
       }
     ]);
   }
