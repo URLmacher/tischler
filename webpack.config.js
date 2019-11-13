@@ -143,6 +143,7 @@ module.exports = ({ production } = {}, { extractCss, analyze, tests, hmr, port, 
             ]
           : ['style-loader', ...cssRules]
       },
+      { test: /\.(png|gif|jpg|cur)$/i, loader: 'url-loader', options: { limit: 8192 } },
       {
         test: /\.css$/i,
         issuer: [{ test: /\.html$/i }],

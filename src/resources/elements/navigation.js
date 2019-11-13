@@ -3,13 +3,8 @@ import { bindable } from 'aurelia-framework';
 export class Navigation {
   @bindable mainLinks;
   @bindable navOpen;
- 
-  constructor() {
-
-  }
 
   attached() {
-    console.log(this.mainLinks);
     document.body.addEventListener('click', e => {
       if (!this.navbar.contains(e.target) && e.target !== this.openNavBtn) this.navOpen = false;
     });
