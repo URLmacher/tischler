@@ -6,15 +6,15 @@ import { EventAggregator } from 'aurelia-event-aggregator';
 export class Contact {
   constructor(ea) {
     this.ea = ea;
-    this.inputNameValue = '';
-    this.inputEmailValue = '';
-    this.textAreaValue = '';
+    this.inputName = { value: '', error: false, errorText: '' };
+    this.inputEmail = { value: '', error: false, errorText: '' };
+    this.textArea = { value: '', error: false, errorText: '' };
     this.buttonText = 'Senden';
   }
 
   attached() {
     this.ea.subscribe('form-submitted', value => {
-      this.serverCall(this.inputNameValue, this.inputEmailValue, this.textAreaValue);
+      this.serverCall(this.inputName.value, this.inputEmail.value, this.textArea.value);
     });
   }
 
@@ -35,6 +35,23 @@ export class Contact {
       })
       .then(data => {
         console.log(data);
+        console.log(data.errors);
+        if (data.success) {
+          //Erfolg
+        } else {
+          if (data.errors.hasOwnProperty('name')) {
+            this.inputName.error = true;
+            this.inputName.errorText = data.errors.name;
+          }
+          if (data.errors.hasOwnProperty('email')) {
+            this.inputEmail.error = true;
+            this.inputEmail.errorText = data.errors.email;
+          }
+          if (data.errors.hasOwnProperty('msg')) {
+            this.textArea.error = true;
+            this.textArea.errorText = data.errors.msg;
+          }
+        }
       });
   }
 }

@@ -4,11 +4,25 @@
   <require from="resources/elements/text-area"></require>
   <require from="resources/elements/button-standard"></require>
 
- <form class="contact">
-   <input-text class="contact__input" value.two-way="inputNameValue"></input-text>
-   <input-email class="contact__input" value.two-way="inputEmailValue"></input-email>
-   <text-area class="contact__input" value.two-way="textAreaValue"></text-area>
-   <button-standard class="contact__btn" text.bind="buttonText"></button-standard>
- </form>
+  <form class="contact">
+    <input-text
+      class="contact__input"
+      value.two-way="inputName.value"
+      error.bind="inputName.error"
+      error-text.bind="inputName.errorText"
+    ></input-text>
+    <input-email
+      class="contact__input"
+      value.two-way="inputEmail.value"
+      error.bind="inputEmail.error"
+      error-text.bind="inputEmail.errorText"
+    ></input-email>
+    <text-area
+      class="contact__input"
+      value.two-way="textArea.value"
+      error.bind="textArea.error"
+      error-text.bind="textArea.errorText"
+    ></text-area>
+    <button-standard class="contact__btn" text.bind="buttonText"></button-standard>
+  </form>
 </template>
- 

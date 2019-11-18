@@ -1,6 +1,17 @@
 <template>
-  <div class="mdc-text-field mdc-text-field--outlined" ref="inputTextDom">
-    <input type="text" id="tf-outlined-${label}" class="mdc-text-field__input" value.bind="value"/>
+  <div
+    class="mdc-text-field mdc-text-field--outlined ${error ? 'mdc-text-field--invalid' : ''}"
+    ref="inputTextDom"
+  >
+    <input
+      type="text"
+      id="tf-outlined-${label}"
+      class="mdc-text-field__input"
+      value.bind="value"
+      aria-controls="username-helper-text"
+      aria-describedby="username-helper-text"
+      focus.trigger="resetErrors()"
+    />
     <div class="mdc-notched-outline">
       <div class="mdc-notched-outline__leading"></div>
       <div class="mdc-notched-outline__notch">
@@ -9,5 +20,11 @@
       <div class="mdc-notched-outline__trailing"></div>
     </div>
   </div>
+  <div class="mdc-text-field-helper-line error-helper-text ${error ? 'error-helper-text--visible' : 'error-helper-text--invisible'}">
+    <div
+      id="username-helper-text"
+      class="mdc-text-field-helper-text error-helper-text__text mdc-text-field-helper-text--persistent">
+      ${errorText}
+    </div>
+  </div>
 </template>
- 

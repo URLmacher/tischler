@@ -1,12 +1,34 @@
 <template>
-  <div class="mdc-text-field mdc-text-field--textarea" ref="textAreaDom">
-    <textarea id="textarea" class="mdc-text-field__input" rows="8" cols="40" value.bind="value"></textarea>
+  <div
+    class="mdc-text-field mdc-text-field--textarea ${error ? 'mdc-text-field--invalid' : ''}"
+    ref="textAreaDom"
+  >
+    <textarea
+      id="textarea"
+      class="mdc-text-field__input"
+      rows="8"
+      cols="40"
+      value.bind="value"
+      aria-controls="textarea-helper-text"
+      aria-describedby="textarea-helper-text"
+      focus.trigger="resetErrors()"
+    ></textarea>
     <div class="mdc-notched-outline">
       <div class="mdc-notched-outline__leading"></div>
       <div class="mdc-notched-outline__notch">
         <label for="textarea" class="mdc-floating-label">${label}</label>
       </div>
       <div class="mdc-notched-outline__trailing"></div>
+    </div>
+  </div>
+  <div
+    class="mdc-text-field-helper-line error-helper-text ${error ? 'error-helper-text--visible' : 'error-helper-text--invisible'}"
+  >
+    <div
+      id="textarea-helper-text"
+      class="mdc-text-field-helper-text error-helper-text__text mdc-text-field-helper-text--persistent"
+    >
+      ${errorText}
     </div>
   </div>
 </template>

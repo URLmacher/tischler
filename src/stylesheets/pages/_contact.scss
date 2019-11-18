@@ -19,7 +19,6 @@
       margin-top: 2rem;
     }
   }
-
 }
 
 .mdc-text-field {
@@ -34,4 +33,20 @@
 .mdc-floating-label {
   @include mdc-floating-label-ink-color($color-background-dark);
   font-family: $font-text-body;
+}
+
+.error-helper-text,
+.mdc-text-field-helper-text {
+  @include mdc-text-field-helper-text-color($color-signal-red);
+  color: red !important;
+  position: absolute;
+  white-space: nowrap;
+
+  &--visible {
+    display: block;
+  }
+
+  &--invisible {
+    display: none;
+  }
 }

@@ -4,6 +4,8 @@ import { MDCFloatingLabel } from '@material/floating-label';
 
 export class InputEmail {
   @bindable value;
+  @bindable error;
+  @bindable errorText;
 
   constructor() {
     this.label = 'Email';
@@ -12,5 +14,9 @@ export class InputEmail {
   attached() {
     new MDCTextField(this.inputEmailDom);
     new MDCFloatingLabel(this.labelDom);
+  }
+
+  resetErrors() {
+    this.error = false;
   }
 }
