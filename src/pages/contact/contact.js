@@ -1,19 +1,25 @@
 import { HttpClient } from 'aurelia-fetch-client';
+import { inject } from 'aurelia-framework';
+import { EventAggregator } from 'aurelia-event-aggregator';
 
+@inject(EventAggregator)
 export class Contact {
-  constructor() {
-    this.inputLabel1 = 'Name';
-    this.inputLabel2 = 'Email';
-    this.textAreaLabel = 'Nachricht';
+  constructor(ea) {
+    this.ea = ea;
+    this.inputNameValue = '';
+    this.inputEmailValue = '';
+    this.textAreaValue = '';
     this.buttonText = 'Senden';
   }
 
   attached() {
-    // this.serverCall();
+    this.ea.subscribe('form-submitted', value => {
+      this.serverCall(this.inputNameValue, this.inputEmailValue, this.textAreaValue);
+    });
   }
 
-  serverCall() {
-    let postData = { test: 'test' };
+  serverCall(name, email, msg) {
+    let postData = { name: name, email: email, msg: msg };
     let httpClient = new HttpClient();
 
     httpClient
@@ -24,7 +30,9 @@ export class Contact {
         method: 'post',
         body: JSON.stringify(postData)
       })
-      .then(result => result.json())
+      .then(result => {
+        return result.json();
+      })
       .then(data => {
         console.log(data);
       });

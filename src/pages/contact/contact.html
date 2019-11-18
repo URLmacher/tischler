@@ -1,12 +1,14 @@
 <template>
   <require from="resources/elements/input-text"></require>
+  <require from="resources/elements/input-email"></require>
   <require from="resources/elements/text-area"></require>
   <require from="resources/elements/button-standard"></require>
 
- <div class="contact">
-   <input-text class="contact__input" label.bind="inputLabel1"></input-text>
-   <input-text class="contact__input" label.bind="inputLabel2"></input-text>
-   <text-area class="contact__input" label.bind="textAreaLabel"></text-area>
+ <form class="contact">
+   <input-text class="contact__input" value.two-way="inputNameValue"></input-text>
+   <input-email class="contact__input" value.two-way="inputEmailValue"></input-email>
+   <text-area class="contact__input" value.two-way="textAreaValue"></text-area>
    <button-standard class="contact__btn" text.bind="buttonText"></button-standard>
- </div>
+ </form>
 </template>
+ 
