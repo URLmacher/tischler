@@ -89,6 +89,14 @@ export class App {
         sub: true,
         title: 'Anfahrt',
         navtitle: 'Anfahrt'
+      },
+      {
+        route: 'admin',
+        name: 'admin',
+        moduleId: PLATFORM.moduleName('pages/login/login'),
+        nav: true,
+        sub: true,
+        title: 'Adminbereich',
       }
     ]);
   }

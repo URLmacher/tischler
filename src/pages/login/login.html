@@ -1,0 +1,21 @@
+<template>
+  <require from="resources/elements/input-text"></require>
+  <require from="resources/elements/input-password"></require>
+  <require from="resources/elements/button-standard"></require>
+
+  <form class="login">
+    <input-text
+      class="login__input"
+      value.two-way="inputName.value"
+      error.bind="inputName.error"
+      error-text.bind="inputName.errorText"
+    ></input-text>
+    <input-password
+      class="login__input"
+      value.two-way="inputPassword.value"
+      error.bind="inputPassword.error"
+      error-text.bind="inputPassword.errorText"
+    ></input-password>
+    <button-standard text.bind="buttonText" event.bind="buttonText"></button-standard>
+  </form>
+</template>

@@ -11,7 +11,7 @@ $objLoader->register();
 $objLoader->addNamespace('PHPMailer\PHPMailer','vendor/phpmailer/phpmailer/src/');
 $objMailer = new PHPMailer\PHPMailer\PHPMailer(TRUE);
 
-    $answer->json = $jsondata;
+$answer->json = $jsondata;
 
 if(!empty($jsondata->name)){
     $name = filter_var(trim($jsondata->name),FILTER_SANITIZE_STRING); 

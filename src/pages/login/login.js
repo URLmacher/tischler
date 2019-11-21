@@ -2,33 +2,31 @@ import { HttpClient } from 'aurelia-fetch-client';
 import { inject } from 'aurelia-framework';
 import { EventAggregator } from 'aurelia-event-aggregator';
 
+
 @inject(EventAggregator)
-export class Contact {
+export class Login {
   constructor(ea) {
     this.ea = ea;
     this.inputName = { value: '', error: false, errorText: '' };
-    this.inputEmail = { value: '', error: false, errorText: '' };
-    this.textArea = { value: '', error: false, errorText: '' };
-    this.buttonText = 'Senden';
-    this.buttonEvent = 'form-submitted';
+    this.inputPassword = { value: '', error: false, errorText: '' };
+    this.buttonText = 'anmelden';
   }
 
   attached() {
-    this.ea.subscribe('form-submitted', value => {
+    this.ea.subscribe('anmelden', value => {
       this.serverCall(
         this.inputName.value,
-        this.inputEmail.value,
-        this.textArea.value
+        this.inputPassword.value
       );
     });
   }
 
-  serverCall(name, email, msg) {
-    let postData = { name: name, email: email, msg: msg };
+  serverCall(name, password) {
+    let postData = { name: name, password: password };
     let httpClient = new HttpClient();
 
     httpClient
-      .fetch('http://tischler.loc/backend/mail.php', {
+      .fetch('http://tischler.loc/backend/login.php', {
         headers: {
           'Content-Type': 'application/json'
         },
@@ -48,13 +46,9 @@ export class Contact {
             this.inputName.error = true;
             this.inputName.errorText = data.errors.name;
           }
-          if (data.errors.hasOwnProperty('email')) {
-            this.inputEmail.error = true;
-            this.inputEmail.errorText = data.errors.email;
-          }
-          if (data.errors.hasOwnProperty('msg')) {
-            this.textArea.error = true;
-            this.textArea.errorText = data.errors.msg;
+          if (data.errors.hasOwnProperty('password')) {
+            this.inputPassword.error = true;
+            this.inputPassword.errorText = data.errors.password;
           }
         }
       });

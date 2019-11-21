@@ -7,6 +7,7 @@ import { EventAggregator } from 'aurelia-event-aggregator';
 @inject(EventAggregator)
 export class ButtonStandard {
   @bindable text;
+  @bindable event;
 
   constructor(eventAggregator) {
     this.ea = eventAggregator;
@@ -17,6 +18,6 @@ export class ButtonStandard {
   }
 
   formSubmit() {
-    this.ea.publish('form-submitted', 'submit');
+    this.ea.publish(this.event, 'submit');
   }
 }
