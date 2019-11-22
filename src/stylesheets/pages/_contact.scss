@@ -3,12 +3,15 @@
   width: 90%;
   background-color: $color-background-bright;
   margin-right: 3rem;
-  position: relative;
-  border-radius: $border-radius-main;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  @include mdc-notched-outline-color($color-background-dark);
+
+  &__form {
+    position: relative;
+    border-radius: $border-radius-main;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    @include mdc-notched-outline-color($color-background-dark);
+  }
 
   &__input {
     display: block;
@@ -32,6 +35,45 @@
   &__link {
     font-size: small;
     color: $color-accent;
+  }
+
+  &__confirm {
+    padding-top: 4rem;
+    padding-left: 2rem;
+
+    & button{
+      margin-left: 3rem;
+    }
+  }
+
+  &__confirm-title {
+    font-size: 2rem;
+    line-height: 1;
+    white-space: nowrap;
+    width: min-content;
+    color: $color-text-dark;
+    font-family: $font-header-title;
+    font-weight: $font-weight-header-title;
+    border-bottom: 3px solid $color-accent;
+  }
+
+  &__confirm-text {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+    white-space: nowrap;
+    color: $color-text-medium;
+    font-family: $font-text-body;
+    font-weight: $font-weight-text-body;
+  }
+
+  &--show{
+    display: block;
+  }
+
+  &--hide{
+    display: none;
   }
 }
 

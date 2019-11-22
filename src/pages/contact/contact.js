@@ -9,8 +9,9 @@ export class Contact {
     this.inputName = { value: '', label: 'Name', error: false, errorText: '' };
     this.inputEmail = { value: '', error: false, errorText: '' };
     this.textArea = { value: '', error: false, errorText: '' };
-    this.buttonText = 'Senden';
-    this.buttonEvent = 'form-submitted';
+    this.sendBtn = { text: 'Senden', event: 'form-submitted' };
+    this.backBtn = { text: 'Zurück', event: 'zurück' };
+    this.msgReceived = true;
   }
 
   attached() {
@@ -20,6 +21,9 @@ export class Contact {
         this.inputEmail.value,
         this.textArea.value
       );
+    });
+    this.ea.subscribe('zurück', value => {
+      this.msgReceived = !this.msgReceived;
     });
   }
 
@@ -39,10 +43,8 @@ export class Contact {
         return result.json();
       })
       .then(data => {
-        console.log(data);
-        console.log(data.errors);
         if (data.success) {
-          //Erfolg
+          this.msgReceived = true;
         } else {
           if (data.errors.hasOwnProperty('name')) {
             this.inputName.error = true;

@@ -3,33 +3,46 @@
   <require from="resources/elements/input-email"></require>
   <require from="resources/elements/text-area"></require>
   <require from="resources/elements/button-standard"></require>
-
-  <form class="contact">
-    <input-text
-      class="contact__input"
-      value.two-way="inputName.value"
-      label.bind="inputName.label"
-      error.bind="inputName.error"
-      error-text.bind="inputName.errorText"
-    ></input-text>
-    <input-email
-      class="contact__input"
-      value.two-way="inputEmail.value"
-      error.bind="inputEmail.error"
-      error-text.bind="inputEmail.errorText"
-    ></input-email>
-    <text-area
-      class="contact__input"
-      value.two-way="textArea.value"
-      error.bind="textArea.error"
-      error-text.bind="textArea.errorText"
-    ></text-area>
-    <div class="contact__btn-wrapper">
+  <div class="contact">
+    <form
+      class="contact__form ${msgReceived ? 'contact--hide' : 'contact--show'}"
+    >
+      <input-text
+        class="contact__input"
+        value.two-way="inputName.value"
+        label.bind="inputName.label"
+        error.bind="inputName.error"
+        error-text.bind="inputName.errorText"
+      ></input-text>
+      <input-email
+        class="contact__input"
+        value.two-way="inputEmail.value"
+        error.bind="inputEmail.error"
+        error-text.bind="inputEmail.errorText"
+      ></input-email>
+      <text-area
+        class="contact__input"
+        value.two-way="textArea.value"
+        error.bind="textArea.error"
+        error-text.bind="textArea.errorText"
+      ></text-area>
+      <div class="contact__btn-wrapper">
+        <button-standard
+          text.bind="sendBtn.text"
+          event.bind="sendBtn.event"
+        ></button-standard>
+        <a href="/#/datenschutz" class="contact__link">Datenschutzerklärung</a>
+      </div>
+    </form>
+    <div
+      class="contact__confirm ${msgReceived ? 'contact--show' : 'contact--hide'}"
+    >
+      <h2 class="contact__confirm-title">Danke für Ihre Nachricht</h2>
+      <p class="contact__confirm-text">Wir melden uns in Kürze</p>
       <button-standard
-        text.bind="buttonText"
-        event.bind="buttonEvent"
+        text.bind="backBtn.text"
+        event.bind="backBtn.event"
       ></button-standard>
-      <a href="/#/datenschutz" class="contact__link">Datenschutzerklärung</a>
     </div>
-  </form>
+  </div>
 </template>
