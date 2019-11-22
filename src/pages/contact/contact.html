@@ -24,9 +24,12 @@
       error.bind="textArea.error"
       error-text.bind="textArea.errorText"
     ></text-area>
-    <button-standard
-      text.bind="buttonText"
-      event.bind="buttonEvent"
-    ></button-standard>
+    <div class="contact__btn-wrapper">
+      <button-standard
+        text.bind="buttonText"
+        event.bind="buttonEvent"
+      ></button-standard>
+      <a href="/#/datenschutz" class="contact__link">Datenschutzerklärung</a>
+    </div>
   </form>
 </template>

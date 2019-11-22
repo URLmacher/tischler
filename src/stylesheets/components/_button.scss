@@ -6,11 +6,8 @@
     @include mdc-button-container-fill-color($color-background-dark);
     @include mdc-button-ink-color($color-background-bright);
     @include mdc-button-outline-color($color-background-dark);
-    font-family: $font-header-subtitle;
     @include mdc-states-base-color($color-background-bright);
     @include mdc-states-hover-opacity(.5);
+    font-family: $font-header-subtitle;
     display: inline-block;
-    width: fit-content;
-    margin-left: 2rem;
-    margin-bottom: 2rem;
 }

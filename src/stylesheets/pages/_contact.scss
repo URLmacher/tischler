@@ -14,10 +14,24 @@
     display: block;
     margin-left: 2rem;
     margin-bottom: 2rem;
+    width: 20rem;
 
     &:first-child {
       margin-top: 2rem;
     }
+  }
+
+  &__btn-wrapper {
+    display: flex;
+    justify-content: space-between;
+    max-width: 20rem;
+    margin-left: 2rem;
+    align-items: center;
+  }
+
+  &__link {
+    font-size: small;
+    color: $color-accent;
   }
 }
 
@@ -28,6 +42,7 @@
   @include mdc-text-field-textarea-stroke-color($color-background-dark);
   @include mdc-text-field-label-color($color-background-dark);
   @include mdc-text-field-caret-color($color-background-dark);
+  width: 100%;
 }
 
 .mdc-floating-label {
@@ -38,7 +53,7 @@
 .error-helper-text,
 .mdc-text-field-helper-text {
   @include mdc-text-field-helper-text-color($color-signal-red);
-  color: red !important;
+  color: $color-signal-red !important;
   position: absolute;
   white-space: nowrap;
 
