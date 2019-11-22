@@ -28,8 +28,6 @@ if (!empty($jsondata->password)) {
 }
 
 if (empty($errors)) {
-    // $answer->pass = checkPassword($name, $password);
-    $answer->user = checkUsername($name);
     if (checkUsername($name) && checkPassword($name, $password)) {
         $answer->success = true;
     } else {

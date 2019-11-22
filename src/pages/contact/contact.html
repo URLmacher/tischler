@@ -37,12 +37,16 @@
     <div
       class="contact__confirm ${msgReceived ? 'contact--show' : 'contact--hide'}"
     >
-      <h2 class="contact__confirm-title">Danke für Ihre Nachricht</h2>
-      <p class="contact__confirm-text">Wir melden uns in Kürze</p>
+      <h2 class="contact__confirm-title">${confirmation.title}</h2>
+      <p class="contact__confirm-text">${confirmation.text}</p>
       <button-standard
         text.bind="backBtn.text"
         event.bind="backBtn.event"
       ></button-standard>
+    </div>
+    <div class="contact__incitement ${msgReceived ? 'contact--hide' : 'contact--show'}">
+      <h2 class="contact__confirm-title">${incitement.title}</h2>
+      <p class="contact__confirm-text">${incitement.text}</p>
     </div>
   </div>
 </template>

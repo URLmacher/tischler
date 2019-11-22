@@ -3,14 +3,23 @@
   width: 90%;
   background-color: $color-background-bright;
   margin-right: 3rem;
+  display: flex;
+  justify-content: space-around;
 
   &__form {
+    max-width: 50%;
     position: relative;
     border-radius: $border-radius-main;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
     @include mdc-notched-outline-color($color-background-dark);
+  }
+  
+  &__incitement {
+    max-width: 50%;
+    padding-top: 4rem;
+    padding-left: 2rem;
   }
 
   &__input {
@@ -40,11 +49,13 @@
   &__confirm {
     padding-top: 4rem;
     padding-left: 2rem;
+    width: 100%;
 
-    & button{
+    & button {
       margin-left: 3rem;
     }
   }
+
 
   &__confirm-title {
     font-size: 2rem;
@@ -60,19 +71,17 @@
   &__confirm-text {
     font-size: 1.5rem;
     margin-top: 1rem;
-    margin-left: 2rem;
     margin-bottom: 2rem;
-    white-space: nowrap;
     color: $color-text-medium;
     font-family: $font-text-body;
     font-weight: $font-weight-text-body;
   }
 
-  &--show{
+  &--show {
     display: block;
   }
 
-  &--hide{
+  &--hide {
     display: none;
   }
 }
