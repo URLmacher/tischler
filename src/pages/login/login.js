@@ -2,22 +2,23 @@ import { HttpClient } from 'aurelia-fetch-client';
 import { inject } from 'aurelia-framework';
 import { EventAggregator } from 'aurelia-event-aggregator';
 
-
 @inject(EventAggregator)
 export class Login {
   constructor(ea) {
     this.ea = ea;
-    this.inputName = { value: '', error: false, errorText: '' };
+    this.inputName = {
+      value: '',
+      label: 'Benutzername',
+      error: false,
+      errorText: ''
+    };
     this.inputPassword = { value: '', error: false, errorText: '' };
     this.buttonText = 'anmelden';
   }
 
   attached() {
     this.ea.subscribe('anmelden', value => {
-      this.serverCall(
-        this.inputName.value,
-        this.inputPassword.value
-      );
+      this.serverCall(this.inputName.value, this.inputPassword.value);
     });
   }
 
@@ -37,8 +38,6 @@ export class Login {
         return result.json();
       })
       .then(data => {
-        console.log(data);
-        console.log(data.errors);
         if (data.success) {
           //Erfolg
         } else {

@@ -6,7 +6,7 @@ import { EventAggregator } from 'aurelia-event-aggregator';
 export class Contact {
   constructor(ea) {
     this.ea = ea;
-    this.inputName = { value: '', error: false, errorText: '' };
+    this.inputName = { value: '', label: 'Name', error: false, errorText: '' };
     this.inputEmail = { value: '', error: false, errorText: '' };
     this.textArea = { value: '', error: false, errorText: '' };
     this.buttonText = 'Senden';
