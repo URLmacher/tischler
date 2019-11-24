@@ -18,4 +18,3 @@ export function configure(aurelia) {
 
   aurelia.start().then(() => aurelia.setRoot(PLATFORM.moduleName('app')));
 }
- 

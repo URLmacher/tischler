@@ -1,6 +1,7 @@
 import { HttpClient } from 'aurelia-fetch-client';
 import { inject } from 'aurelia-framework';
 import { EventAggregator } from 'aurelia-event-aggregator';
+import { baseUrl } from 'CONFIG';
 
 @inject(EventAggregator)
 export class Contact {
@@ -11,7 +12,7 @@ export class Contact {
     this.inputEmail = { value: '', error: false, errorText: '' };
     this.textArea = { value: '', error: false, errorText: '' };
     this.sendBtn = { text: 'Senden', event: 'form-submitted' };
-    this.backBtn = { text: 'Zurück', event: 'zurück' };
+    this.backBtn = { text: 'Zurück', event: 'zurück' }; 
     this.incitement = {
       title: 'Schreiben Sie uns!',
       text:
@@ -41,7 +42,7 @@ export class Contact {
     let httpClient = new HttpClient();
 
     httpClient
-      .fetch('http://tischler.loc/backend/mail.php', {
+      .fetch(`${baseUrl}/backend/mail.php`, {
         headers: {
           'Content-Type': 'application/json'
         },
