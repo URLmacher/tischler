@@ -11,3 +11,4 @@ export class Products {
     this.products = data.content;
   }
 }
+ 

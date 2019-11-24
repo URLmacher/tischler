@@ -1,6 +1,7 @@
 import { HttpClient } from 'aurelia-fetch-client';
 import { inject } from 'aurelia-framework';
 import { EventAggregator } from 'aurelia-event-aggregator';
+import { baseUrl } from 'CONFIG';
 
 @inject(EventAggregator)
 export class Login {
@@ -27,7 +28,7 @@ export class Login {
     let httpClient = new HttpClient();
 
     httpClient
-      .fetch('http://tischler.loc/backend/login.php', {
+      .fetch(`${baseUrl}/backend/login.php`, {
         headers: {
           'Content-Type': 'application/json'
         },
@@ -39,7 +40,7 @@ export class Login {
       })
       .then(data => {
         if (data.success) {
-          //Erfolg
+          location.replace(baseUrl);
         } else {
           if (data.errors.hasOwnProperty('name')) {
             this.inputName.error = true;

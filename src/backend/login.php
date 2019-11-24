@@ -8,7 +8,6 @@ $name;
 $password;
 $json = file_get_contents('php://input');
 $jsondata = json_decode($json);
-$answer->json = $jsondata;
 
 checkPassword('admin', '1111');
 checkUsername('admin');
@@ -24,11 +23,13 @@ if (!empty($jsondata->password)) {
     $password = $jsondata->password;
     $data['password'] = $password;
 } else {
-    $errors['password'] = 'Bitte Password eingeben';
+    $errors['password'] = 'Bitte Password eingeben'; 
 }
 
 if (empty($errors)) {
     if (checkUsername($name) && checkPassword($name, $password)) {
+        session_start();
+        $_SESSION['username'] = $name;
         $answer->success = true;
     } else {
         $errors['password'] = 'Falsches Passwort oder Benutzername';

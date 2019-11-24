@@ -3,6 +3,7 @@ import { EventAggregator } from 'aurelia-event-aggregator';
 import { routerConfig } from 'routerConfig.js';
 import { RouterEvent } from 'aurelia-router';
 import { autoinject } from 'aurelia-framework';
+import { baseUrl } from 'CONFIG';
 
 @autoinject
 export class App {
@@ -11,6 +12,7 @@ export class App {
   constructor(ea) {
     this.ea = ea;
     this.navOpen = false;
+    this.checkSess();
   }
 
   attached() {
@@ -25,5 +27,13 @@ export class App {
     this.router = router;
     config.title = 'Tischler';
     config.map(routerConfig);
+  }
+
+  async checkSess() {
+    const json = await fetch(`${baseUrl}/backend/session.php`, {
+      credentials: 'include'
+    });
+    const data = await json.json();
+    console.log(data);
   }
 }
