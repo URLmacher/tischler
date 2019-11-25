@@ -1,7 +1,9 @@
 <template>
   <require from="resources/elements/navigation"></require>
   <require from="resources/elements/header"></require>
+  <require from="resources/elements/super-user"></require>
 
+  <super-user if.bind="loggedIn" username.bind="username"></super-user>
   <header title.bind="currentSiteTitle" subtitle.bind="currentSiteSubtitle"></header>
   <div class="background">
     <div class="background__logo"></div>

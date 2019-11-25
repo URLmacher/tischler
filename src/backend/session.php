@@ -1,11 +1,12 @@
 <?php
 $answer = new stdClass();
 $answer->success = false;
+session_start();
 
 if(isset($_SESSION['username'])){
-    $answer->session = $_SESSION;
+    $answer->username = $_SESSION['username'];
+    $answer->sessionId = session_id();
     $answer->success = true;
 }
-session_start();
-$answer->session = $_SESSION;
+
 echo json_encode($answer); 

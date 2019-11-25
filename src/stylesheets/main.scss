@@ -18,7 +18,7 @@
 @import 'layout/header', 'layout/navigation', 'layout/background', 'layout/footer';
 
 // 5. Components
-@import 'components/button', 'components/card';
+@import 'components/button', 'components/card', 'components/super-user';
 
 // 6. Page-specific styles
 @import 'pages/home', 'pages/products', 'pages/about', 'pages/contact', 'pages/impressum', 'pages/datenschutz',

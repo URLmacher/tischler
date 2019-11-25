@@ -12,6 +12,9 @@ export class App {
   constructor(ea) {
     this.ea = ea;
     this.navOpen = false;
+    this.loggedIn = false;
+    this.sessionId = '';
+    this.username = '';
     this.checkSess();
   }
 
@@ -34,6 +37,10 @@ export class App {
       credentials: 'include'
     });
     const data = await json.json();
-    console.log(data);
+    if (data.success) {
+      this.loggedIn = true;
+      this.username = data.username;
+      this.sessionId = data.sessionId;
+    }
   }
 }
