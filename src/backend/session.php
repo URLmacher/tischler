@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/anticors.php';
+
 $answer = new stdClass();
 $answer->success = false;
 session_start();

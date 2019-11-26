@@ -1,5 +1,7 @@
 <?php
 require_once __DIR__.'/src/Psr4AutoloaderClass.php';
+require_once __DIR__.'/anticors.php';
+
 $answer = new stdClass();
 $answer->success = false;
 $data = [];

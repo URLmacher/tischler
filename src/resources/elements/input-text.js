@@ -6,11 +6,12 @@ export class InputText {
   @bindable value;
   @bindable label;
   @bindable error;
-  @bindable errorText
+  @bindable errorText;
 
   attached() {
     new MDCTextField(this.inputTextDom);
-    new MDCFloatingLabel(this.labelDom);
+    const label = new MDCFloatingLabel(this.labelDom);
+    // label.floatLabel(true);
   }
 
   resetErrors() {

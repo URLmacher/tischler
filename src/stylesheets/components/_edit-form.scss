@@ -1,0 +1,28 @@
+.edit-form {
+  height: 100%;
+  width: 100%;
+  background: rgba(245, 245, 245, 0.835);
+  z-index: 500;
+  position: absolute;
+  overflow-y: scroll;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  &__textfield {
+     display: block;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+    width: 20rem;
+  }
+
+  &--open {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+  }
+  &--closed {
+    display: none;
+  }
+}

@@ -5,6 +5,7 @@
       <span class="super_user__name-span">${username}</span></span
     >
     <button click.trigger="logOut()">Logout</button>
-    <button>Edit</button>
+    <button click.trigger="startEdit()">${formOpen ? 'Close' : 'Edit'}</button>
+    <button class="${formOpen ? 'super-user__btn--show' : 'super-user__btn--hide'}" click.trigger="saveEdit()">Save</button>
   </div>
 </template>

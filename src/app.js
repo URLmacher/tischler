@@ -12,7 +12,7 @@ export class App {
   constructor(ea) {
     this.ea = ea;
     this.navOpen = false;
-    this.loggedIn = false;
+    this.loggedIn = true;
     this.sessionId = '';
     this.username = '';
     this.checkSess();
@@ -33,9 +33,7 @@ export class App {
   }
 
   async checkSess() {
-    const json = await fetch(`${baseUrl}/backend/session.php`, {
-      credentials: 'include'
-    });
+    const json = await fetch(`${baseUrl}/backend/session.php`);
     const data = await json.json();
     if (data.success) {
       this.loggedIn = true;

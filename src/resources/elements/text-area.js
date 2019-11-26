@@ -3,12 +3,10 @@ import { MDCTextField } from '@material/textfield';
 
 export class TextArea {
   @bindable value;
+  @bindable label;
   @bindable error;
   @bindable errorText;
-
-  constructor() {
-    this.label = 'Nachricht';
-  }
+  @bindable prefilled 
 
   attached() {
     new MDCTextField(this.textAreaDom);

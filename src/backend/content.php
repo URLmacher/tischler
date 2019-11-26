@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/anticors.php';
 $answer = new stdClass();
 
 // Todo : only allow content tables
