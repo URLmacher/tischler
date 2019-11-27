@@ -5,6 +5,7 @@ export class Impressum {
     this.contactInfoTitle = 'Für den Inhalt verantwortlich:';
     this.area = 'impressum';
     this.getContent();
+    this.newContactInfo = { text: '', textFlag: true };
   }
 
   async getContent() {

@@ -5,6 +5,7 @@ export class Datenschutz {
   constructor() {
     this.getContent();
     this.area = 'datenschutz';
+    this.newArticle = { text: '', textFlag: true, title: '', titleFlag: true };
   }
 
   async getContent() {

@@ -7,32 +7,32 @@
     <form if.bind="!confirmMsg" class="add-form__form">
        <h3 class="edit-form__title">Neuer Eintrag</h3>
       <input-text
-        if.bind="content.img"
+        if.bind="content.imgFlag"
         class="add-form__textfield"
         label.bind="labelTypes.img"
         value.two-way="content.img"
       ></input-text>
       <input-text
-        if.bind="content.title"
+        if.bind="content.titleFlag"
         class="add-form__textfield"
         label.bind="labelTypes.title"
         value.two-way="content.title"
       ></input-text>
       <input-text
-        if.bind="content.body_title"
+        if.bind="content.body_titleFlag"
         class="add-form__textfield"
         label.bind="labelTypes.bodytitle"
         value.two-way="content.body_title"
       ></input-text>
       <text-area
-        if.bind="content.body_text"
+        if.bind="content.body_textFlag"
         class="add-form__textfield"
         prefilled.bind="labelsPrefilled"
         value.two-way="content.body_text"
         label.bind="labelTypes.bodytext"
       ></text-area>
       <text-area
-        if.bind="content.text"
+        if.bind="content.textFlag"
         class="add-form__textfield"
         prefilled.bind="labelsPrefilled"
         value.two-way="content.text"

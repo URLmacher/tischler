@@ -5,7 +5,14 @@ export class About {
   constructor() {
     this.getContent();
     this.area = 'about';
-    this.newArticle = { title: ' ', text: ' ', img: ' ' };
+    this.newArticle = {
+      titleFlag: true,
+      title: '',
+      textFlag: true,
+      text: '',
+      imgFlag: true,
+      img: ''
+    };
   }
 
   attached() {

@@ -1,6 +1,8 @@
 <template>
   <require from="resources/elements/edit-form"></require>
+  <require from="resources/elements/add-form"></require>
 
+  <add-form content.bind="newArticle" area.bind="area"></add-form>
   <edit-form contents.bind="articles" area.bind="area"></edit-form>
   <div class="datenschutz" ref="datenschutzElement">
     <div class="datenschutz-textblock" repeat.for="article of articles">

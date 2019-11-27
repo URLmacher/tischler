@@ -4,6 +4,16 @@ export class Products {
   constructor() {
     this.getContent();
     this.area = 'products';
+    this.newProduct = {
+      body_text: '',
+      body_textFlag: true,
+      body_title: '',
+      body_titleFlag: true,
+      img: '',
+      imgFlag: true,
+      title: '',
+      titleFlag: true
+    };
   }
 
   async getContent() {

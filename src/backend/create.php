@@ -6,25 +6,25 @@ $answer->success = false;
 $json = file_get_contents('php://input');
 $jsondata = json_decode($json);
 
-// if (!empty($jsondata->content)) {
-//     switch ($jsondata->area) {
-//         case 'about':
-//             $answer->success =  updateAbout($jsondata->content);
-//             break;
-//         case 'impressum':
-//             $answer->success =  updateImpressum($jsondata->content);
-//             break;
-//         case 'datenschutz':
-//             $answer->success =  updateDatenschutz($jsondata->content);
-//             break;
-//         case 'products':
-//             $answer->success =  updateProducts($jsondata->content);
-//             break;
-//     }
-// }
-$answer->data = $jsondata;
+if (!empty($jsondata->content)) {
 
-function updateAbout($data)
+    switch ($jsondata->area) {
+        case 'about':
+            $answer->success =  createAbout($jsondata->content);
+            break;
+        case 'impressum':
+            $answer->success =  createImpressum($jsondata->content);
+            break;
+        case 'datenschutz':
+            $answer->success =  createDatenschutz($jsondata->content);
+            break;
+        case 'products':
+            $answer->success =  createProducts($jsondata->content);
+            break;
+    }
+}
+
+function createAbout($data)
 {
     $host =  'localhost';
     $user = 'Admin';
@@ -34,21 +34,19 @@ function updateAbout($data)
     $pdo = new PDO($dsn, $user, $password);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
     $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-    for ($i = 0; $i < count($data); $i++) {
-        $sql = 'UPDATE about SET img =:img, title = :title, text = :text WHERE id = :id';
-        $stmt = $pdo->prepare($sql);
-        $values = [
-            'img' => $data[$i]->img,
-            'title' => $data[$i]->title,
-            'text' => $data[$i]->text,
-            'id' => $data[$i]->id
-        ];
-        $stmt->execute($values);
-    }
+
+    $sql = 'INSERT INTO about(img, title, text) VALUES(:img, :title, :text)';
+    $stmt = $pdo->prepare($sql);
+    $values = [
+        'img' => $data->img,
+        'title' => $data->title,
+        'text' => $data->text
+    ];
+    $stmt->execute($values);
     return true;
 }
 
-function updateImpressum($data)
+function createImpressum($data)
 {
     $host =  'localhost';
     $user = 'Admin';
@@ -58,19 +56,18 @@ function updateImpressum($data)
     $pdo = new PDO($dsn, $user, $password);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
     $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-    for ($i = 0; $i < count($data); $i++) {
-        $sql = 'UPDATE impressum SET text = :text WHERE id = :id';
-        $stmt = $pdo->prepare($sql);
-        $values = [
-            'text' => $data[$i]->text,
-            'id' => $data[$i]->id
-        ];
-        $stmt->execute($values);
-    }
+
+    $sql = 'INSERT INTO impressum(text) VALUES(:text)';
+    $stmt = $pdo->prepare($sql);
+    $values = [
+        'text' => $data->text
+    ];
+    $stmt->execute($values);
+
     return true;
 }
 
-function updateProducts($data)
+function createProducts($data)
 {
     $host =  'localhost';
     $user = 'Admin';
@@ -80,22 +77,21 @@ function updateProducts($data)
     $pdo = new PDO($dsn, $user, $password);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
     $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-    for ($i = 0; $i < count($data); $i++) {
-        $sql = 'UPDATE products SET img =:img, title = :title, body_title = :body_title, body_text = :body_text id = :id';
-        $stmt = $pdo->prepare($sql);
-        $values = [
-            'img' => $data[$i]->img,
-            'title' => $data[$i]->title,
-            'body_title' => $data[$i]->body_title,
-            'body_text' => $data[$i]->body_text,
-            'id' => $data[$i]->id
-        ];
-        $stmt->execute($values);
-    }
+
+    $sql = 'INSERT INTO products(img, title, body_title, body_text) VALUES(:img, :title, :body_title, :body_text)';
+    $stmt = $pdo->prepare($sql);
+    $values = [
+        'img' => $data->img,
+        'title' => $data->title,
+        'body_title' => $data->body_title,
+        'body_text' => $data->body_text
+    ];
+    $stmt->execute($values);
+
     return true;
 }
 
-function updateDatenschutz($data)
+function createDatenschutz($data)
 {
     $host =  'localhost';
     $user = 'Admin';
@@ -105,16 +101,15 @@ function updateDatenschutz($data)
     $pdo = new PDO($dsn, $user, $password);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
     $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-    for ($i = 0; $i < count($data); $i++) {
-        $sql = 'UPDATE datenschutz SET title = :title, text = :text WHERE id = :id';
-        $stmt = $pdo->prepare($sql);
-        $values = [
-            'title' => $data[$i]->title,
-            'text' => $data[$i]->text,
-            'id' => $data[$i]->id
-        ];
-        $stmt->execute($values);
-    }
+
+    $sql = 'INSERT INTO datenschutz(title, text) VALUES(:title, :text)';
+    $stmt = $pdo->prepare($sql);
+    $values = [
+        'title' => $data->title,
+        'text' => $data->text
+    ];
+    $stmt->execute($values);
+
     return true;
 }
 

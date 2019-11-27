@@ -50,7 +50,6 @@ export class AddForm {
         return result.json();
       })
       .then(data => {
-        console.log(data);
         if (data.success) {
           this.confirmMsg = 'Eintrag hinzugefügt';
         }

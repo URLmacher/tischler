@@ -1,11 +1,13 @@
 <template>
   <require from="resources/elements/edit-form"></require>
+  <require from="resources/elements/add-form"></require>
 
+  <add-form content.bind="newContactInfo" area.bind="area"></add-form>
   <edit-form contents.bind="contactInfos" area.bind="area"></edit-form>
   <div class="impressum">
     <h3 class="impressum__title">${contactInfoTitle}</h3>
     <p class="impressum__text" repeat.for="contactInfo of contactInfos">
-      ${contactInfo.text}
+      ${contactInfo.text} 
     </p>
   </div>
 </template>
