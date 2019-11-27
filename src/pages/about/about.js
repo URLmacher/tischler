@@ -4,6 +4,7 @@ import { baseUrl } from 'CONFIG';
 export class About {
   constructor() {
     this.getContent();
+    this.area = 'about';
   }
 
   attached() {

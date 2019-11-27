@@ -3,19 +3,36 @@
   <require from="resources/elements/text-area"></require>
 
   <div class="edit-form ${formOpen ? 'edit-form--open' : 'edit-form--closed'}">
-    <form repeat.for="content of contents" class="edit-form__form">
+    <h3 if.bind="confirmMsg" class="edit-form__msg">${confirmMsg}</h3>
+    <form if.bind="!confirmMsg" repeat.for="content of contents" class="edit-form__form">
       <h3 class="edit-form__title">Eintrag ${$index+1}</h3>
       <input-text
+        if.bind="content.img"
         class="edit-form__textfield"
         label.bind="labelTypes.img"
         value.two-way="content.img"
       ></input-text>
       <input-text
+        if.bind="content.title"
         class="edit-form__textfield"
         label.bind="labelTypes.title"
         value.two-way="content.title"
       ></input-text>
+      <input-text
+        if.bind="content.body_title"
+        class="edit-form__textfield"
+        label.bind="labelTypes.bodytitle"
+        value.two-way="content.body_title"
+      ></input-text>
       <text-area
+        if.bind="content.body_text"
+        class="edit-form__textfield"
+        prefilled.bind="labelsPrefilled"
+        value.two-way="content.body_text"
+        label.bind="labelTypes.bodytext"
+      ></text-area>
+      <text-area
+        if.bind="content.text"
         class="edit-form__textfield"
         prefilled.bind="labelsPrefilled"
         value.two-way="content.text"

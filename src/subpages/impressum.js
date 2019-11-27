@@ -3,6 +3,7 @@ import { baseUrl } from 'CONFIG';
 export class Impressum {
   constructor() {
     this.contactInfoTitle = 'Für den Inhalt verantwortlich:';
+    this.area = 'impressum';
     this.getContent();
   }
 

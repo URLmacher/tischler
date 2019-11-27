@@ -1,7 +1,7 @@
 <template>
   <require from="resources/elements/edit-form"></require>
 
-  <edit-form contents.bind="articles"></edit-form>
+  <edit-form contents.bind="articles" area.bind="area"></edit-form>
   <div class="about" ref="aboutElement">
     <div class="about-textblock" repeat.for="article of articles">
       <img src="${article.img}" alt="article image" class="about-textblock__img" />

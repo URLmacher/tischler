@@ -7,44 +7,114 @@ $json = file_get_contents('php://input');
 $jsondata = json_decode($json);
 
 if (!empty($jsondata->content)) {
-    $answer->data = $jsondata->content;
-   $answer->success =  update($jsondata->content);
+    switch ($jsondata->area) {
+        case 'about':
+            $answer->success =  updateAbout($jsondata->content);
+            break;
+        case 'impressum':
+            $answer->success =  updateImpressum($jsondata->content);
+            break;
+        case 'datenschutz':
+            $answer->success =  updateDatenschutz($jsondata->content);
+            break;
+        case 'products':
+            $answer->success =  updateProducts($jsondata->content);
+            break;
+    }
 }
 
 
-/**
- * updates database
- *
- * @param string $username
- * @param string $pass
- * @return bool
- */
-function update($data)
+function updateAbout($data)
 {
     $host =  'localhost';
     $user = 'Admin';
     $password = '12345';
     $dbname = 'tischler';
-    $dsn = 'mysql:host=' . $host . ';dbname=' . $dbname;
+    $dsn = 'mysql:host=' . $host . ';dbname=' . $dbname . ';charset=utf8';
     $pdo = new PDO($dsn, $user, $password);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
     $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-    for($i = 0; $i < count($data); $i++) {
+    for ($i = 0; $i < count($data); $i++) {
         $sql = 'UPDATE about SET img =:img, title = :title, text = :text WHERE id = :id';
         $stmt = $pdo->prepare($sql);
         $values = [
-            'img'=>$data[$i]->img,
-            'title'=> $data[$i]->title,
-            'text'=> $data[$i]->text,
+            'img' => $data[$i]->img,
+            'title' => $data[$i]->title,
+            'text' => $data[$i]->text,
             'id' => $data[$i]->id
         ];
         $stmt->execute($values);
     }
-    // foreach ($data as $key => $value) {
-    //     $answer->$key = $value;
-    //     // $sql = 'UPDATE about SET ' . $type . ' WHERE id = :id';
-    // }
+    return true;
+}
 
+function updateImpressum($data)
+{
+    $host =  'localhost';
+    $user = 'Admin';
+    $password = '12345';
+    $dbname = 'tischler';
+    $dsn = 'mysql:host=' . $host . ';dbname=' . $dbname . ';charset=utf8';
+    $pdo = new PDO($dsn, $user, $password);
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+    for ($i = 0; $i < count($data); $i++) {
+        $sql = 'UPDATE impressum SET text = :text WHERE id = :id';
+        $stmt = $pdo->prepare($sql);
+        $values = [
+            'text' => $data[$i]->text,
+            'id' => $data[$i]->id
+        ];
+        $stmt->execute($values);
+    }
+    return true;
+}
+
+function updateProducts($data)
+{
+    $host =  'localhost';
+    $user = 'Admin';
+    $password = '12345';
+    $dbname = 'tischler';
+    $dsn = 'mysql:host=' . $host . ';dbname=' . $dbname . ';charset=utf8';
+    $pdo = new PDO($dsn, $user, $password);
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+    for ($i = 0; $i < count($data); $i++) {
+        $sql = 'UPDATE products SET img =:img, title = :title, body_title = :body_title, body_text = :body_text id = :id';
+        $stmt = $pdo->prepare($sql);
+        $values = [
+            'img' => $data[$i]->img,
+            'title' => $data[$i]->title,
+            'body_title' => $data[$i]->body_title,
+            'body_text' => $data[$i]->body_text,
+            'id' => $data[$i]->id
+        ];
+        $stmt->execute($values);
+    }
+    return true;
+}
+
+function updateDatenschutz($data)
+{
+    $host =  'localhost';
+    $user = 'Admin';
+    $password = '12345';
+    $dbname = 'tischler';
+    $dsn = 'mysql:host=' . $host . ';dbname=' . $dbname . ';charset=utf8';
+    $pdo = new PDO($dsn, $user, $password);
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+    for ($i = 0; $i < count($data); $i++) {
+        $sql = 'UPDATE datenschutz SET title = :title, text = :text WHERE id = :id';
+        $stmt = $pdo->prepare($sql);
+        $values = [
+            'title' => $data[$i]->title,
+            'text' => $data[$i]->text,
+            'id' => $data[$i]->id
+        ];
+        $stmt->execute($values);
+    }
     return true;
 }
 

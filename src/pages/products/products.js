@@ -3,6 +3,7 @@ import { baseUrl } from 'CONFIG';
 export class Products {
   constructor() {
     this.getContent();
+    this.area = 'products';
   }
 
   async getContent() {
@@ -11,4 +12,3 @@ export class Products {
     this.products = data.content;
   }
 }
- 

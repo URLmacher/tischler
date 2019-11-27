@@ -1,7 +1,7 @@
 .edit-form {
   height: 100%;
   width: 100%;
-  background: rgba(245, 245, 245, 0.835);
+  background: $color-background-semi-transparent;
   z-index: 500;
   position: absolute;
   overflow-y: scroll;
@@ -10,8 +10,28 @@
   right: 0;
   bottom: 0;
 
+  &__form {
+    margin-top: 2rem;
+  }
+
+  &__msg {
+    margin: auto;
+    margin-top: 2rem;
+    color: $color-text-dark;
+    font-size: 3rem;
+    font-family: $font-header-subtitle;
+    font-weight: $font-weight-text-title;
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+    color: $color-text-dark;
+    font-family: $font-header-subtitle;
+    font-weight: $font-weight-text-title;
+  }
+
   &__textfield {
-     display: block;
+    display: block;
     margin-left: 2rem;
     margin-bottom: 2rem;
     width: 20rem;

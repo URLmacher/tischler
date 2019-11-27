@@ -4,6 +4,7 @@ import { baseUrl } from 'CONFIG';
 export class Datenschutz {
   constructor() {
     this.getContent();
+    this.area = 'datenschutz';
   }
 
   async getContent() {

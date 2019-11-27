@@ -6,11 +6,13 @@ import { baseUrl } from 'CONFIG';
 @inject(EventAggregator)
 export class EditForm {
   @bindable contents;
+  @bindable area;
   formOpen = false;
 
   constructor(eventAggregator) {
     this.ea = eventAggregator;
     this.labelsPrefilled = true;
+    this.confirmMsg = false;
     this.contents = [
       { title: 'Hund', img: 'imgurl', text: 'Irgendein Scheisstext' },
       { title: 'Kot', img: 'imgurl', text: 'Irgendein Scheisstext' },
@@ -33,6 +35,7 @@ export class EditForm {
       this.formOpen = true;
     });
     this.ea.subscribe('closeForm', value => {
+      this.confirmMsg = false;
       this.formOpen = false;
     });
     this.ea.subscribe('saveForm', value => {
@@ -41,7 +44,7 @@ export class EditForm {
   }
 
   saveForm() {
-    let postData = { content: this.contents };
+    let postData = { content: this.contents, area: this.area };
     let httpClient = new HttpClient();
 
     httpClient
@@ -57,10 +60,7 @@ export class EditForm {
       })
       .then(data => {
         if (data.success) {
-          this.formOpen = false;
-          console.log('Erfolg');
-        } else {
-          console.log(data);
+          this.confirmMsg = 'Einträge gespeichert';
         }
       });
   }
