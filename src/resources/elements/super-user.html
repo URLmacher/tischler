@@ -7,20 +7,37 @@
       <span class="super-user__name-span">${username}</span></span
     >
     <div class="super-user__btn-box">
+      <!-- add entry -->
       <icon-button
-        class="${formOpen ?  'super-user__btn--hide': 'super-user__btn--show'}"
+        class="${formOpen || addFormOpen ?  'super-user__btn--hide': 'super-user__btn--show'}"
+        click.trigger="startAdd()"
+        icon.bind="btns.add"
+        secondary.bind="btns.secondary"
+      ></icon-button>
+      <!-- edit entries -->
+      <icon-button
+        class="${formOpen || addFormOpen ?  'super-user__btn--hide': 'super-user__btn--show'}"
         click.trigger="startEdit()"
         icon.bind="btns.edit"
         secondary.bind="btns.secondary"
       ></icon-button>
+      <!-- save add -->
+      <icon-button
+        class="${addFormOpen ? 'super-user__btn--show' : 'super-user__btn--hide'}"
+        click.trigger="saveAdd()"
+        icon.bind="btns.save"
+        secondary.bind="btns.secondary"
+      ></icon-button>
+      <!-- save edit -->
       <icon-button
         class="${formOpen ? 'super-user__btn--show' : 'super-user__btn--hide'}"
         click.trigger="saveEdit()"
         icon.bind="btns.save"
         secondary.bind="btns.secondary"
       ></icon-button>
+      <!-- close forms -->
       <icon-button
-        class="${formOpen ? 'super-user__btn--show' : 'super-user__btn--hide'}"
+        class="${formOpen || addFormOpen ? 'super-user__btn--show' : 'super-user__btn--hide'}"
         click.trigger="closeEdit()"
         icon.bind="btns.close"
         secondary.bind="btns.secondary"

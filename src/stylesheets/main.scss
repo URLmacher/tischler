@@ -20,8 +20,8 @@
   'layout/footer';
 
 // 5. Components
-@import 'components/button','components/icon-button', 'components/card', 'components/super-user',
-  'components/edit-form';
+@import 'components/button', 'components/icon-button', 'components/card',
+  'components/super-user', 'components/edit-form', 'components/add-form';
 
 // 6. Page-specific styles
 @import 'pages/home', 'pages/products', 'pages/about', 'pages/contact',

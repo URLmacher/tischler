@@ -35,5 +35,11 @@
       background-size: contain;
       background-position: center;
     }
+    &--add {
+      background-image: url('../assets/icons/add.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
   }
 }

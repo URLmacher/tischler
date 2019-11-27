@@ -1,12 +1,15 @@
 <template>
   <require from="resources/elements/edit-form"></require>
+  <require from="resources/elements/add-form"></require>
 
+  <add-form content.bind="newArticle" area.bind="area"></add-form>
   <edit-form contents.bind="articles" area.bind="area"></edit-form>
+
   <div class="about" ref="aboutElement">
     <div class="about-textblock" repeat.for="article of articles">
-      <img src="${article.img}" alt="article image" class="about-textblock__img" />
-      <h3 class="about-textblock__title">${article.title}</h3>
-      <p class="about-textblock__text">${article.text}</p>
+      <img if.bind="article.img" src="${article.img}" alt="article image" class="about-textblock__img" />
+      <h3 if.bind="article.title" class="about-textblock__title">${article.title}</h3>
+      <p if.bind="article.text" class="about-textblock__text">${article.text}</p>
     </div>
   </div>
 </template>

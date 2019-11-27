@@ -5,6 +5,7 @@ export class About {
   constructor() {
     this.getContent();
     this.area = 'about';
+    this.newArticle = { title: ' ', text: ' ', img: ' ' };
   }
 
   attached() {
