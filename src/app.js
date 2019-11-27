@@ -12,7 +12,7 @@ export class App {
   constructor(ea) {
     this.ea = ea;
     this.navOpen = false;
-    this.loggedIn = true;
+    this.loggedIn = false;
     this.sessionId = '';
     this.username = '';
     this.checkSess();

@@ -11,6 +11,7 @@
 @import '~@material/floating-label/mdc-floating-label';
 @import '~@material/button/mdc-button';
 @import '~@material/textfield/helper-text/mdc-text-field-helper-text';
+@import '~@material/fab/mdc-fab';
 // 3. Base stuff
 @import 'base/base', 'base/fonts', 'base/typography', 'base/helpers';
 
@@ -19,7 +20,7 @@
   'layout/footer';
 
 // 5. Components
-@import 'components/button', 'components/card', 'components/super-user',
+@import 'components/button','components/icon-button', 'components/card', 'components/super-user',
   'components/edit-form';
 
 // 6. Page-specific styles

@@ -1,0 +1,35 @@
+.icon-button {
+  @include mdc-fab-accessible($color-text-medium);
+  margin-left: 1rem;
+  margin-right: 1rem;
+
+  &__icon {
+    height: 100%;
+    width: 100%;
+
+    &--edit {
+      background-image: url('../assets/icons/edit.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+    &--close {
+      background-image: url('../assets/icons/close.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+    &--logout {
+      background-image: url('../assets/icons/logout.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+    &--save {
+      background-image: url('../assets/icons/save.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+  }
+}

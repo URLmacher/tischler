@@ -1,48 +1,47 @@
 // -----------------------------------------------------------------------------
 // This file contains all @font-face declarations, if any.
 // -----------------------------------------------------------------------------
-
 @font-face {
   font-family: 'Barlow';
   font-style: normal;
   font-weight: 100;
   src: local('Barlow Thin'), local('Barlow-Thin'),
-       url('/assets/fonts/Barlow/Barlow-Thin.ttf') format('truetype');
+    url('/assets/fonts/Barlow/Barlow-Thin.ttf') format('truetype');
 }
 @font-face {
   font-family: 'Barlow';
   font-style: normal;
   font-weight: 300;
   src: local('Barlow Light'), local('Barlow-Light'),
-       url('/assets/fonts/Barlow/Barlow-Light.ttf') format('truetype');
+    url('/assets/fonts/Barlow/Barlow-Light.ttf') format('truetype');
 }
 @font-face {
   font-family: 'Barlow';
   font-style: normal;
   font-weight: 400;
   src: local('Barlow Regular'), local('Barlow-Regular'),
-       url('/assets/fonts/Barlow/Barlow-Regular.ttf') format('truetype');
+    url('/assets/fonts/Barlow/Barlow-Regular.ttf') format('truetype');
 }
 @font-face {
   font-family: 'Barlow';
   font-style: normal;
   font-weight: 600;
   src: local('Barlow Medium'), local('Barlow-Medium'),
-       url('/assets/fonts/Barlow/Barlow-Medium.ttf') format('truetype');
+    url('/assets/fonts/Barlow/Barlow-Medium.ttf') format('truetype');
 }
 @font-face {
   font-family: 'Barlow';
   font-style: normal;
   font-weight: 600;
   src: local('Barlow Bold'), local('Barlow-Bold'),
-       url('/assets/fonts/Barlow/Barlow-Bold.ttf') format('truetype');
+    url('/assets/fonts/Barlow/Barlow-Bold.ttf') format('truetype');
 }
 @font-face {
   font-family: 'Barlow';
   font-style: normal;
   font-weight: 800;
   src: local('Barlow Black'), local('Barlow-Black'),
-       url('/assets/fonts/Barlow/Barlow-Black.ttf') format('truetype');
+    url('/assets/fonts/Barlow/Barlow-Black.ttf') format('truetype');
 }
 
 @font-face {
@@ -50,28 +49,28 @@
   font-style: normal;
   font-weight: 400;
   src: local('Maven Pro Regular'), local('MavenPro-Regular'),
-       url('/assets/fonts/Maven_Pro/MavenPro-Regular.ttf') format('truetype');
+    url('/assets/fonts/Maven_Pro/MavenPro-Regular.ttf') format('truetype');
 }
 @font-face {
   font-family: 'Maven Pro';
   font-style: normal;
   font-weight: 600;
   src: local('Maven Pro Medium'), local('MavenPro-Medium'),
-       url('/assets/fonts/Maven_Pro/MavenPro-Medium.ttf') format('truetype');
+    url('/assets/fonts/Maven_Pro/MavenPro-Medium.ttf') format('truetype');
 }
 @font-face {
   font-family: 'Maven Pro';
   font-style: normal;
   font-weight: 600;
   src: local('Maven Pro Bold'), local('MavenPro-Bold'),
-       url('/assets/fonts/Maven_Pro/MavenPro-Bold.ttf') format('truetype');
+    url('/assets/fonts/Maven_Pro/MavenPro-Bold.ttf') format('truetype');
 }
 @font-face {
   font-family: 'Maven Pro';
   font-style: normal;
   font-weight: 800;
   src: local('Maven Pro Black'), local('MavenPro-Black'),
-       url('/assets/fonts/Maven_Pro/MavenPro-Black.ttf') format('truetype');
+    url('/assets/fonts/Maven_Pro/MavenPro-Black.ttf') format('truetype');
 }
 
 @font-face {
@@ -79,33 +78,33 @@
   font-style: normal;
   font-weight: 400;
   src: local('Lato Regular'), local('Lato-Regular'),
-       url('../assets/fonts/Lato/Lato-Regular.ttf') format('truetype');
+    url('../assets/fonts/Lato/Lato-Regular.ttf') format('truetype');
 }
 @font-face {
   font-family: 'Lato';
   font-style: italic;
   font-weight: 400;
   src: local('Lato Italic'), local('Lato-Italic'),
-       url('/assets/fonts/Lato/Lato-Italic.ttf') format('truetype');
+    url('/assets/fonts/Lato/Lato-Italic.ttf') format('truetype');
 }
 @font-face {
   font-family: 'Lato';
   font-style: normal;
   font-weight: 200;
   src: local('Lato Light'), local('Lato-Light'),
-       url('/assets/fonts/Lato/Lato-Light.ttf') format('truetype');
+    url('/assets/fonts/Lato/Lato-Light.ttf') format('truetype');
 }
 @font-face {
   font-family: 'Lato';
   font-style: normal;
   font-weight: 600;
   src: local('Lato Bold'), local('Lato-Bold'),
-       url('../assets/fonts/Lato/Lato-Bold.ttf') format('truetype');
+    url('../assets/fonts/Lato/Lato-Bold.ttf') format('truetype');
 }
 @font-face {
   font-family: 'Lato';
   font-style: italic;
   font-weight: 600;
   src: local('Lato BoldItalic'), local('Lato-BoldItalic'),
-       url('/assets/fonts/Lato/Lato-BoldItalic.ttf') format('truetype');
+    url('/assets/fonts/Lato/Lato-BoldItalic.ttf') format('truetype');
 }

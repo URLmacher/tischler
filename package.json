@@ -10,11 +10,13 @@
   "dependencies": {
     "@martingust/aurelia-repeat-strategies": "github:martingust/aurelia-repeat-strategies@master",
     "@material/button": "^4.0.0",
+    "@material/fab": "^4.0.0",
     "@material/floating-label": "^4.0.0",
     "@material/textfield": "^4.0.0",
     "aurelia-animator-css": "^1.0.4",
     "aurelia-bootstrapper": "^2.3.2",
     "aurelia-fetch-client": "^1.8.2",
+    "font-awesome": "^4.7.0",
     "material-design-icons": "^3.0.1",
     "simplebar": "^5.0.6",
     "whatwg-fetch": "^3.0.0"

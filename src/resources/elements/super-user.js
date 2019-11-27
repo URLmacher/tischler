@@ -5,10 +5,16 @@ import { EventAggregator } from 'aurelia-event-aggregator';
 
 @inject(EventAggregator)
 export class SuperUser {
-  @bindable username;
+  @bindable username = 'Niemand'
   formOpen = false;
 
   constructor(ea) {
+    this.btns = {
+      edit: 'edit',
+      save: 'save',
+      close: 'close',
+      logout: 'logout'
+    };
     this.ea = ea;
     this.ea.subscribe('router:navigation:complete', response => {
       this.formOpen = false;
@@ -16,14 +22,15 @@ export class SuperUser {
   }
 
   startEdit() {
-    if (!this.formOpen) {
-      this.ea.publish('openForm', this.username);
-      this.formOpen = true;
-    } else {
-      this.ea.publish('closeForm', 'nix');
-      this.formOpen = false;
-    }
+    this.ea.publish('openForm', this.username);
+    this.formOpen = true;
   }
+
+  closeEdit() {
+    this.ea.publish('closeForm', 'nix');
+    this.formOpen = false;
+  }
+
   saveEdit() {
     if (this.formOpen) {
       this.ea.publish('saveForm', this.username);
