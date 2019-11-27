@@ -44,13 +44,7 @@ if(!empty($jsondata->msg)){
 //     $objMailer->isSMTP();                        
 //     $objMailer->Host = 'smtp.gmail.com';            
 //     $objMailer->SMTPAuth = true;                     
-//     $objMailer->Username = 'urlmacher@gmail.com'; //Login      
-//     $objMailer->Password = 'w3rbBRXj_R5-YCs='; //Passwort
-//     $objMailer->SMTPSecure = 'tls';                  
-//     $objMailer->Port = 587;          
-
-//     $objMailer->setFrom($email, $name);
-//     $objMailer->addAddress('urlmacher@gmail.com'); //Empfänger
+//   
 //     $objMailer->Subject = 'Nachricht von der Website';
 //     $objMailer->Body = "$name schrieb:\n\n" . $nachricht;
 //     $objMailer->AltBody = "$name schrieb:\n\n" . $nachricht;
