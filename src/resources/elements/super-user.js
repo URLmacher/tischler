@@ -13,7 +13,8 @@ export class SuperUser {
       edit: 'edit',
       save: 'save',
       close: 'close',
-      logout: 'logout'
+      logout: 'logout',
+      secondary: 'secondary'
     };
     this.ea = ea;
     this.ea.subscribe('router:navigation:complete', response => {

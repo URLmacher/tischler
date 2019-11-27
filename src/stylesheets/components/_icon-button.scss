@@ -1,7 +1,11 @@
 .icon-button {
-  @include mdc-fab-accessible($color-text-medium);
+  @include mdc-fab-accessible($color-text-dark);
   margin-left: 1rem;
   margin-right: 1rem;
+
+  &--secondary {
+    @include mdc-fab-accessible($color-text-medium);
+  }
 
   &__icon {
     height: 100%;
