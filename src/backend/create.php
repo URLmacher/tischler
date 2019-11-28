@@ -30,14 +30,7 @@ if (!empty($jsondata->content)) {
 
 function createAbout($data)
 {
-    $host =  'localhost';
-    $user = 'Admin';
-    $password = '12345';
-    $dbname = 'tischler';
-    $dsn = 'mysql:host=' . $host . ';dbname=' . $dbname . ';charset=utf8';
-    $pdo = new PDO($dsn, $user, $password);
-    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
-    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+    include 'dbconnect.php';
 
     $sql = 'INSERT INTO about(img, title, text) VALUES(:img, :title, :text)';
     $stmt = $pdo->prepare($sql);
@@ -52,14 +45,7 @@ function createAbout($data)
 
 function createImpressum($data)
 {
-    $host =  'localhost';
-    $user = 'Admin';
-    $password = '12345';
-    $dbname = 'tischler';
-    $dsn = 'mysql:host=' . $host . ';dbname=' . $dbname . ';charset=utf8';
-    $pdo = new PDO($dsn, $user, $password);
-    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
-    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+    include 'dbconnect.php';
 
     $sql = 'INSERT INTO impressum(text) VALUES(:text)';
     $stmt = $pdo->prepare($sql);
@@ -73,14 +59,7 @@ function createImpressum($data)
 
 function createProducts($data)
 {
-    $host =  'localhost';
-    $user = 'Admin';
-    $password = '12345';
-    $dbname = 'tischler';
-    $dsn = 'mysql:host=' . $host . ';dbname=' . $dbname . ';charset=utf8';
-    $pdo = new PDO($dsn, $user, $password);
-    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
-    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+    include 'dbconnect.php';
 
     $sql = 'INSERT INTO products(img, title, body_title, body_text) VALUES(:img, :title, :body_title, :body_text)';
     $stmt = $pdo->prepare($sql);
@@ -97,14 +76,7 @@ function createProducts($data)
 
 function createDatenschutz($data)
 {
-    $host =  'localhost';
-    $user = 'Admin';
-    $password = '12345';
-    $dbname = 'tischler';
-    $dsn = 'mysql:host=' . $host . ';dbname=' . $dbname . ';charset=utf8';
-    $pdo = new PDO($dsn, $user, $password);
-    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
-    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+    include 'dbconnect.php';
 
     $sql = 'INSERT INTO datenschutz(title, text) VALUES(:title, :text)';
     $stmt = $pdo->prepare($sql);

@@ -10,14 +10,7 @@ if (!empty($_GET['area'])) {
 
 function getContent($area)
 {
-    $host =  'localhost';
-    $user = 'Admin';
-    $password = '12345';
-    $dbname = 'tischler';
-    $dsn = 'mysql:host=' . $host . ';dbname=' . $dbname . ';charset=utf8';
-    $pdo = new PDO($dsn, $user, $password);
-    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
-    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+  include 'dbconnect.php';
 
     $sql = 'SELECT * FROM ' . $area;
     $stmt = $pdo->prepare($sql);

@@ -31,14 +31,8 @@ if (!empty($jsondata->content)) {
 
 function updateAbout($data)
 {
-    $host =  'localhost';
-    $user = 'Admin';
-    $password = '12345';
-    $dbname = 'tischler';
-    $dsn = 'mysql:host=' . $host . ';dbname=' . $dbname . ';charset=utf8';
-    $pdo = new PDO($dsn, $user, $password);
-    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
-    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+    include 'dbconnect.php';
+
     for ($i = 0; $i < count($data); $i++) {
         $sql = 'UPDATE about SET img =:img, title = :title, text = :text WHERE id = :id';
         $stmt = $pdo->prepare($sql);
@@ -55,14 +49,8 @@ function updateAbout($data)
 
 function updateImpressum($data)
 {
-    $host =  'localhost';
-    $user = 'Admin';
-    $password = '12345';
-    $dbname = 'tischler';
-    $dsn = 'mysql:host=' . $host . ';dbname=' . $dbname . ';charset=utf8';
-    $pdo = new PDO($dsn, $user, $password);
-    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
-    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+    include 'dbconnect.php';
+
     for ($i = 0; $i < count($data); $i++) {
         $sql = 'UPDATE impressum SET text = :text WHERE id = :id';
         $stmt = $pdo->prepare($sql);
@@ -77,14 +65,8 @@ function updateImpressum($data)
 
 function updateProducts($data)
 {
-    $host =  'localhost';
-    $user = 'Admin';
-    $password = '12345';
-    $dbname = 'tischler';
-    $dsn = 'mysql:host=' . $host . ';dbname=' . $dbname . ';charset=utf8';
-    $pdo = new PDO($dsn, $user, $password);
-    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
-    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+    include 'dbconnect.php';
+
     for ($i = 0; $i < count($data); $i++) {
         $sql = 'UPDATE products SET img =:img, title = :title, body_title = :body_title, body_text = :body_text WHERE id = :id';
         $stmt = $pdo->prepare($sql);
@@ -102,14 +84,8 @@ function updateProducts($data)
 
 function updateDatenschutz($data)
 {
-    $host =  'localhost';
-    $user = 'Admin';
-    $password = '12345';
-    $dbname = 'tischler';
-    $dsn = 'mysql:host=' . $host . ';dbname=' . $dbname . ';charset=utf8';
-    $pdo = new PDO($dsn, $user, $password);
-    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
-    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+    include 'dbconnect.php';
+    
     for ($i = 0; $i < count($data); $i++) {
         $sql = 'UPDATE datenschutz SET title = :title, text = :text WHERE id = :id';
         $stmt = $pdo->prepare($sql);

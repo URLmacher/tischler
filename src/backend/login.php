@@ -46,14 +46,7 @@ if (empty($errors)) {
  */
 function checkPassword($username, $pass)
 {
-    $host =  'localhost';
-    $user = 'Admin';
-    $password = '12345';
-    $dbname = 'tischler';
-    $dsn = 'mysql:host=' . $host . ';dbname=' . $dbname;
-    $pdo = new PDO($dsn, $user, $password);
-    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
-    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+    include 'dbconnect.php';
 
     $sql = 'SELECT password FROM superuser WHERE superuser_name = ?';
     $stmt = $pdo->prepare($sql);
@@ -72,14 +65,7 @@ function checkPassword($username, $pass)
 function checkUsername($username)
 {
 
-    $host =  'localhost';
-    $user = 'Admin';
-    $password = '12345';
-    $dbname = 'tischler';
-    $dsn = 'mysql:host=' . $host . ';dbname=' . $dbname;
-    $pdo = new PDO($dsn, $user, $password);
-    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
-    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+    include 'dbconnect.php';
 
     $sql = 'SELECT 1 FROM superuser WHERE superuser_name = ?';
     $stmt = $pdo->prepare($sql);

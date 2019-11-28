@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__.'/src/Psr4AutoloaderClass.php';
 require_once __DIR__.'/anticors.php';
+$config = include('config.php');
 
 $answer = new stdClass();
 $answer->success = false;
@@ -37,34 +38,34 @@ if(!empty($jsondata->msg)){
 }
 
 
-// if (empty($errors)) { 
-//     //Einstellungen für Gmail 
-//     //Zugriff durch weniger sichere Apps: an
-//     //https://myaccount.google.com/lesssecureapps 
-//     $objMailer->isSMTP();                        
-//     $objMailer->Host = 'smtp.gmail.com';            
-//     $objMailer->SMTPAuth = true;                     
-//     $objMailer->Username = 'urlmacher@gmail.com'; //Login      
-//     $objMailer->Password = 'w3rbBRXj_R5-YCs='; //Passwort
-//     $objMailer->SMTPSecure = 'tls';                  
-//     $objMailer->Port = 587;          
+if (empty($errors)) { 
+    //Einstellungen für Gmail 
+    //Zugriff durch weniger sichere Apps: an
+    //https://myaccount.google.com/lesssecureapps 
+    $objMailer->isSMTP();                        
+    $objMailer->Host = 'smtp.gmail.com';            
+    $objMailer->SMTPAuth = true;                     
+    $objMailer->Username = $config['email-adress']; //Login      
+    $objMailer->Password = $config['email-password']; //Passwort
+    $objMailer->SMTPSecure = 'tls';                  
+    $objMailer->Port = 587;          
 
-//     $objMailer->setFrom($email, $name);
-//     $objMailer->addAddress('urlmacher@gmail.com'); //Empfänger
-//     $objMailer->Subject = 'Nachricht von der Website';
-//     $objMailer->Body = "$name schrieb:\n\n" . $nachricht;
-//     $objMailer->AltBody = "$name schrieb:\n\n" . $nachricht;
+    $objMailer->setFrom($email, $name);
+    $objMailer->addAddress($config['email-adress']); //Empfänger
+    $objMailer->Subject = 'Nachricht von der Website';
+    $objMailer->Body = "$name schrieb:\n\n" . $nachricht;
+    $objMailer->AltBody = "$name schrieb:\n\n" . $nachricht;
 
-//     try{
-//         if(!$objMailer->send()) {
-//             $errors['send'] = $mail->ErrorInfo;
-//         } else {
-//             $answer->success = true;
-//         }
-//     }catch(Exception $e) {
-//         $errors['process'] = $e->getMessage();
-//     }
-// }
+    try{
+        if(!$objMailer->send()) {
+            $errors['send'] = $mail->ErrorInfo;
+        } else {
+            $answer->success = true;
+        }
+    }catch(Exception $e) {
+        $errors['process'] = $e->getMessage();
+    }
+}
     
 
 $answer->errors = $errors;
