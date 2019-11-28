@@ -7,20 +7,24 @@ $json = file_get_contents('php://input');
 $jsondata = json_decode($json);
 
 if (!empty($jsondata->content)) {
-
-    switch ($jsondata->area) {
-        case 'about':
-            $answer->success =  createAbout($jsondata->content);
-            break;
-        case 'impressum':
-            $answer->success =  createImpressum($jsondata->content);
-            break;
-        case 'datenschutz':
-            $answer->success =  createDatenschutz($jsondata->content);
-            break;
-        case 'products':
-            $answer->success =  createProducts($jsondata->content);
-            break;
+    session_start();
+    if ($jsondata->id != session_id()) {
+        return;
+    } else {
+        switch ($jsondata->area) {
+            case 'about':
+                $answer->success =  createAbout($jsondata->content);
+                break;
+            case 'impressum':
+                $answer->success =  createImpressum($jsondata->content);
+                break;
+            case 'datenschutz':
+                $answer->success =  createDatenschutz($jsondata->content);
+                break;
+            case 'products':
+                $answer->success =  createProducts($jsondata->content);
+                break;
+        }
     }
 }
 

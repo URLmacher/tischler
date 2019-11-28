@@ -13,6 +13,7 @@ export class EditForm {
     this.ea = eventAggregator;
     this.labelsPrefilled = true;
     this.confirmMsg = false;
+    this.sessionId = false;
     this.labelTypes = {
       img: 'Bild URL',
       title: 'Titel',
@@ -31,12 +32,19 @@ export class EditForm {
       this.formOpen = false;
     });
     this.ea.subscribe('saveForm', value => {
+      this.sessionId = value;
       this.saveForm();
     });
   }
 
   saveForm() {
-    let postData = { content: this.contents, area: this.area };
+    if (!this.sessionId) return;
+
+    let postData = {
+      content: this.contents,
+      area: this.area,
+      id: this.sessionId
+    };
     let httpClient = new HttpClient();
 
     httpClient

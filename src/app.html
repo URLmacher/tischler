@@ -3,7 +3,7 @@
   <require from="resources/elements/header"></require>
   <require from="resources/elements/super-user"></require>
 
-  <super-user if.bind="loggedIn" username.bind="username"></super-user>
+  <super-user if.bind="loggedIn" id.bind="sessionId" username.bind="username"></super-user>
   <header title.bind="currentSiteTitle" subtitle.bind="currentSiteSubtitle"></header>
   <div class="background">
     <div class="background__logo"></div>

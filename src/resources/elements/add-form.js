@@ -11,6 +11,7 @@ export class AddForm {
 
   constructor(eventAggregator) {
     this.ea = eventAggregator;
+    this.sessionId = false;
     this.confirmMsg = false;
     this.labelTypes = {
       img: 'Bild URL',
@@ -30,12 +31,19 @@ export class AddForm {
       this.formOpen = true;
     });
     this.ea.subscribe('saveAddForm', value => {
+      this.sessionId = value;
       this.saveForm();
     });
   }
 
   saveForm() {
-    let postData = { content: this.content, area: this.area };
+    if (!this.sessionId) return;
+
+    let postData = {
+      content: this.content,
+      area: this.area,
+      id: this.sessionId
+    };
     let httpClient = new HttpClient();
 
     httpClient

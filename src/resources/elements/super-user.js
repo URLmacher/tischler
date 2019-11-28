@@ -5,6 +5,7 @@ import { EventAggregator } from 'aurelia-event-aggregator';
 
 @inject(EventAggregator)
 export class SuperUser {
+  @bindable id;
   @bindable username;
   formOpen = false;
 
@@ -25,13 +26,13 @@ export class SuperUser {
   }
 
   startEdit() {
-    this.ea.publish('openForm', this.username);
+    this.ea.publish('openForm', this.id);
     this.formOpen = true;
     this.addFormOpen = false;
   }
 
   startAdd() {
-    this.ea.publish('openAddForm', this.username);
+    this.ea.publish('openAddForm', this.id);
     this.formOpen = false;
     this.addFormOpen = true;
   }
@@ -43,11 +44,11 @@ export class SuperUser {
   }
 
   saveEdit() {
-    this.ea.publish('saveForm', this.username);
+    this.ea.publish('saveForm', this.id);
   }
 
   saveAdd() {
-    this.ea.publish('saveAddForm', this.username);
+    this.ea.publish('saveAddForm', this.id);
   }
 
   async logOut() {

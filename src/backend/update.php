@@ -7,19 +7,24 @@ $json = file_get_contents('php://input');
 $jsondata = json_decode($json);
 
 if (!empty($jsondata->content)) {
-    switch ($jsondata->area) {
-        case 'about':
-            $answer->success =  updateAbout($jsondata->content);
-            break;
-        case 'impressum':
-            $answer->success =  updateImpressum($jsondata->content);
-            break;
-        case 'datenschutz':
-            $answer->success =  updateDatenschutz($jsondata->content);
-            break;
-        case 'products':
-            $answer->success =  updateProducts($jsondata->content);
-            break;
+    session_start();
+    if ($jsondata->id != session_id()) {
+        return;
+    } else {
+        switch ($jsondata->area) {
+            case 'about':
+                $answer->success =  updateAbout($jsondata->content);
+                break;
+            case 'impressum':
+                $answer->success =  updateImpressum($jsondata->content);
+                break;
+            case 'datenschutz':
+                $answer->success =  updateDatenschutz($jsondata->content);
+                break;
+            case 'products':
+                $answer->success =  updateProducts($jsondata->content);
+                break;
+        }
     }
 }
 
@@ -81,7 +86,7 @@ function updateProducts($data)
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
     $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     for ($i = 0; $i < count($data); $i++) {
-        $sql = 'UPDATE products SET img =:img, title = :title, body_title = :body_title, body_text = :body_text id = :id';
+        $sql = 'UPDATE products SET img =:img, title = :title, body_title = :body_title, body_text = :body_text WHERE id = :id';
         $stmt = $pdo->prepare($sql);
         $values = [
             'img' => $data[$i]->img,
