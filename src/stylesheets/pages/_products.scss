@@ -1,5 +1,41 @@
-.products{
-    width: 100%;
-    height: 100%;
-    display: flex;
+.products {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+
+  &__btn {
+    position: absolute;
+    height: 4rem;
+    width: 4rem;
+    cursor: pointer;
+
+    transition: $transition-standard;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &--right {
+      right: 3rem;
+      bottom: 1rem;
+      background-image: url('../assets/icons/right.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+
+    &--left {
+      left: 0;
+      bottom: 1rem;
+      background-image: url('../assets/icons/left.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+  }
+}
+.products__icon--right::before,
+.products__icon--right::after {
+  background-color: transparent !important;
 }

@@ -2,17 +2,20 @@
   <require from="resources/elements/edit-form"></require>
   <require from="resources/elements/product-card"></require>
   <require from="resources/elements/add-form"></require>
+  <require from="resources/value-converters/take"></require>
 
   <add-form content.bind="newProduct" area.bind="area"></add-form>
   <edit-form contents.bind="products" area.bind="area"></edit-form>
   <div class="products">
     <product-card
-      repeat.for="product of products"
+      repeat.for="product of products | take:slice"
       title.bind="product.title"
       img.bind="product.img"
       bodytitle.bind="product.body_title"
       bodytext.bind="product.body_text"
     >
     </product-card>
+    <div if.bind="!lastPage" role="button" aria-pressed="false" class="products__btn products__btn--right" click.trigger="next()"></div>
+    <div if.bind="!firstPage" role="button" aria-pressed="false" class="products__btn products__btn--left" click.trigger="prev()"></div>
   </div>
 </template>
