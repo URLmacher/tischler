@@ -52,6 +52,7 @@ export class EditForm {
       })
       .then(data => {
         if (data.success) {
+          this.ea.publish('contentChanged', '');
           this.confirmMsg = 'Einträge gespeichert';
         }
       });

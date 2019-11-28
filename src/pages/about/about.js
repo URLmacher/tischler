@@ -1,8 +1,12 @@
 import SimpleBar from 'simplebar';
 import { baseUrl } from 'CONFIG';
+import { inject } from 'aurelia-framework';
+import { EventAggregator } from 'aurelia-event-aggregator';
 
+@inject(EventAggregator)
 export class About {
-  constructor() {
+  constructor(eventAggregator) {
+    this.ea = eventAggregator;
     this.getContent();
     this.area = 'about';
     this.newArticle = {
@@ -16,6 +20,9 @@ export class About {
   }
 
   attached() {
+    this.ea.subscribe('contentChanged', value => {
+      this.getContent();
+    });
     new SimpleBar(this.aboutElement, {
       forceVisible: true,
       autoHide: false
