@@ -1,7 +1,18 @@
 .icon-button {
-  @include mdc-fab-accessible($color-text-dark);
+  @include mdc-fab-accessible($color-background-dark);
   margin-left: 1rem;
   margin-right: 1rem;
+
+  @include sm {
+    @include mdc-icon-button-icon-size(20px);
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  @include md {
+    @include mdc-icon-button-icon-size(20px);
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
 
   &--secondary {
     @include mdc-fab-accessible($color-text-medium);

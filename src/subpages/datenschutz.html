@@ -6,7 +6,7 @@
   <edit-form contents.bind="articles" area.bind="area"></edit-form>
   <div class="datenschutz" ref="datenschutzElement">
     <div class="datenschutz-textblock" repeat.for="article of articles">
-      <h3 class="datenschutz-textblock__title">${article.title}</h3>
+      <h3 if.bind="article.title" class="datenschutz-textblock__title">${article.title}</h3>
       <p class="datenschutz-textblock__text">${article.text}</p>
     </div>
   </div>

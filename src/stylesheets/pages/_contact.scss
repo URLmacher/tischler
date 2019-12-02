@@ -5,21 +5,59 @@
   margin-right: 3rem;
   display: flex;
   justify-content: space-around;
+  @include sm {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+  }
+  @include md {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+  }
+  @include lg {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+  }
 
   &__form {
-    max-width: 50%;
+    max-width: 60%;
     position: relative;
     border-radius: $border-radius-main;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
     @include mdc-notched-outline-color($color-background-dark);
+
+    @include sm {
+      margin-top: 3rem;
+      max-width: 90%;
+    }
+    @include md {
+      margin-top: 3rem;
+      max-width: 90%;
+    }
+    @include lg {
+      margin-top: 1rem;
+      max-width: 90%;
+    }
   }
-  
+
   &__incitement {
     max-width: 50%;
     padding-top: 4rem;
     padding-left: 2rem;
+
+    @include sm {
+      max-width: 90%;
+    }
+    @include md {
+      max-width: 90%;
+    }
+    @include lg {
+      max-width: 60%;
+    }
+    @include xl {
+      width: 40%;
+    }
   }
 
   &__input {
@@ -31,6 +69,18 @@
     &:first-child {
       margin-top: 2rem;
     }
+    @include sm {
+      width: 80%;
+      margin-bottom: 1rem;
+    }
+    @include md {
+      width: 80%;
+      margin-bottom: 1rem;
+    }
+    @include lg {
+      width: 80%;
+      margin-bottom: 1rem;
+    }
   }
 
   &__btn-wrapper {
@@ -39,11 +89,20 @@
     max-width: 20rem;
     margin-left: 2rem;
     align-items: center;
+    @include sm {
+      max-width: 15rem;
+    }
+    @include md {
+      max-width: 15rem;
+    }
+    @include lg {
+      max-width: 15rem;
+    }
   }
 
   &__link {
     font-size: small;
-    color: $color-accent;
+    color: $color-text-medium;
   }
 
   &__confirm {
@@ -56,7 +115,6 @@
     }
   }
 
-
   &__confirm-title {
     font-size: 2rem;
     line-height: 1;
@@ -66,6 +124,15 @@
     font-family: $font-header-title;
     font-weight: $font-weight-header-title;
     border-bottom: 3px solid $color-accent;
+    @include sm {
+      font-size: 1.4rem;
+    }
+    @include md {
+      font-size: 1.4rem;
+    }
+    @include lg {
+      font-size: 1.8rem;
+    }
   }
 
   &__confirm-text {
@@ -75,6 +142,31 @@
     color: $color-text-medium;
     font-family: $font-text-body;
     font-weight: $font-weight-text-body;
+
+    @include sm {
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+    @include md {
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+    @include lg {
+      font-size: 1.2rem;
+      margin-bottom: 0;
+    }
+  }
+
+  &__confirm-btn {
+    @include sm {
+      margin-top: 2rem;
+    }
+    @include md {
+      margin-top: 2rem;
+    }
+    @include lg {
+      margin-top: 2rem;
+    }
   }
 
   &--show {
@@ -93,9 +185,41 @@
   @include mdc-text-field-textarea-stroke-color($color-background-dark);
   @include mdc-text-field-label-color($color-background-dark);
   @include mdc-text-field-caret-color($color-background-dark);
+  @include mdc-text-field-outline-shape-radius($border-radius-main);
   width: 100%;
-}
 
+  // @include sm {
+  //   @include mdc-text-field-outlined-height(40px);
+  // }
+  // @include md {
+  //   @include mdc-text-field-outlined-height(40px);
+  // }
+  // @include lg {
+  //   @include mdc-text-field-outlined-height(40px);
+  // }
+}
+.mdc-text-field--textarea {
+  @include sm {
+    @include mdc-text-field-outlined-height(150px);
+  }
+  @include md {
+    @include mdc-text-field-outlined-height(150px);
+  }
+  @include lg {
+    @include mdc-text-field-outlined-height(150px);
+  }
+}
+.mdc-floating-label--float-above.textarealabel{
+  @include sm {
+    transform: translateY(-27.75px) scale(0.75) !important;
+  }
+  @include md {
+    transform: translateY(-27.75px) scale(0.75) !important;
+  }
+  @include lg {
+    transform: translateY(-27.75px) scale(0.75) !important;
+  }
+}
 .mdc-floating-label {
   @include mdc-floating-label-ink-color($color-background-dark);
   font-family: $font-text-body;

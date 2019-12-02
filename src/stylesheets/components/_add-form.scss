@@ -20,6 +20,15 @@
     font-size: 3rem;
     font-family: $font-header-subtitle;
     font-weight: $font-weight-text-title;
+
+    @include sm {
+      margin-top: 4rem;
+      font-size: 2rem;
+    }
+    @include md {
+      margin-top: 4rem;
+      font-size: 2rem;
+    }
   }
 
   &__title {

@@ -23,12 +23,37 @@
   }
 }
 
-/// Make a context based selector a little more friendly
-/// @author Hugo Giraudel
-/// @param {String} $context
-@mixin when-inside($context) {
-  #{$context} & {
-    @content;
-  }
+
+
+@mixin sm {
+   @media (min-width:0px) and ( max-width: #{$screen-sm-min}) {
+       @content;
+   }
 }
 
+// Medium devices
+@mixin md {
+   @media (min-width:#{$screen-sm-min}) and (max-width: #{$screen-md-min}) {
+       @content;
+   }
+}
+// extrawürschtl
+@mixin ex {
+   @media (min-width:#{$screen-md-min}) and (max-width: #{1200px}) {
+       @content;
+   }
+}
+
+// Large devices
+@mixin lg {
+   @media (min-width: #{$screen-md-min}) and (max-width: #{$screen-lg-min}) {
+       @content;
+   }
+}
+
+// Extra large devices
+@mixin xl {
+   @media (min-width: #{$screen-lg-min}) and (max-width: #{$screen-xl-min}) {
+       @content;
+   }
+}

@@ -6,7 +6,8 @@ export class Navigation {
 
   attached() {
     document.body.addEventListener('click', e => {
-      if (!this.navbar.contains(e.target) && e.target !== this.openNavBtn) this.navOpen = false;
+      if (!this.navbar.contains(e.target) && e.target !== this.openNavBtn)
+        this.navOpen = false;
     });
   }
 

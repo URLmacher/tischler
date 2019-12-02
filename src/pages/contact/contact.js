@@ -10,7 +10,7 @@ export class Contact {
     this.msgReceived = false;
     this.inputName = { value: '', label: 'Name', error: false, errorText: '' };
     this.inputEmail = { value: '', error: false, errorText: '' };
-    this.textArea = { value: '', error: false, errorText: '' };
+    this.textArea = { value: '', error: false, errorText: '', label: 'Nachricht' };
     this.sendBtn = { text: 'Senden', event: 'form-submitted' };
     this.backBtn = { text: 'Zurück', event: 'zurück' }; 
     this.incitement = {

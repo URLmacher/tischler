@@ -2,7 +2,7 @@
   height: 100%;
   width: 100%;
   background: $color-background-semi-transparent;
-  z-index: 500; 
+  z-index: 500;
   position: absolute;
   overflow-y: scroll;
   top: 0;
@@ -21,6 +21,15 @@
     font-size: 3rem;
     font-family: $font-header-subtitle;
     font-weight: $font-weight-text-title;
+
+    @include sm {
+      margin-top: 4rem;
+      font-size: 2rem;
+    }
+    @include md {
+      margin-top: 4rem;
+      font-size: 2rem;
+    }
   }
 
   &__title {
@@ -41,8 +50,20 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
+
+    @include sm {
+      grid-template-columns: 1fr;
+    }
+    @include md {
+      grid-template-columns: 1fr;
+    }
+    @include lg {
+      grid-template-columns: 1fr;
+    }
+    @include xl {
+    }
   }
-  
+
   &--closed {
     display: none;
   }

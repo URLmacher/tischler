@@ -12,6 +12,27 @@
   align-items: center;
   @include mdc-notched-outline-color($color-background-dark);
 
+  &__title {
+    font-size: 2rem;
+    line-height: 1;
+    max-width: 50%;
+    color: $color-text-dark;
+    font-family: $font-header-title;
+    font-weight: $font-weight-header-title;
+    margin-bottom: 2rem;
+    @include sm {
+       font-size: 1.2rem;
+    }
+    @include md {
+     font-size: 1.2rem;
+    }
+    @include lg {
+    font-size: 1.5rem;
+    }
+    @include xl {
+    }
+  }
+
   &__input {
     display: block;
     margin-bottom: 2rem;
@@ -21,7 +42,7 @@
     }
   }
 
-  &__btn{
+  &__btn {
     margin-left: 0;
   }
 }

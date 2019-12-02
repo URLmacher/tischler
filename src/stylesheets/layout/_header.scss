@@ -1,36 +1,89 @@
-// -----------------------------------------------------------------------------
-// This file contains all styles related to the header of the site/application.
-// -----------------------------------------------------------------------------
 .header {
   position: absolute;
   right: 10rem;
   top: 20%;
   background-color: $color-background-dark;
-  height: 40vh;
+  height: 30vh;
   width: 30vw;
   color: $color-main;
   text-align: center;
   border-radius: $border-radius-main;
   z-index: 2;
+  box-shadow: $box-shadow-main;
+
+  @include sm {
+    right: 3rem;
+    top: 5%;
+    height: 30vh;
+    width: 40vw;
+  }
+  @include md {
+    right: 4rem;
+    top: 7%;
+    height: 30vh;
+  }
+  @include lg {
+    right: 6rem;
+    top: 10%;
+  }
 
   &--smaller {
-    height: 18vh;
-    width: 20vw;
+    height: auto;
+    width:auto;
+ padding: 1rem;
+
+    @include sm {
+      height: auto;
+    }
+    @include md {
+       height: auto;
+    }
+    @include lg {
+    }
   }
 
   &__title {
     white-space: nowrap;
-    font-size: 6rem;
     border-bottom: 0.6rem $color-accent solid;
     line-height: 1;
-    width: min-content;
+    width: 22vw;
     margin: auto;
     margin-top: 2rem;
     font-family: $font-header-title;
     font-weight: $font-weight-header-title;
 
+    @include sm {
+      font-size: 2rem;
+      border-bottom: 0.3rem $color-accent solid;
+    }
+    @include md {
+      font-size: 2rem;
+      border-bottom: 0.3rem $color-accent solid;
+    }
+    @include lg {
+      font-size: 4rem;
+    }
+    @include xl {
+      font-size: 6rem;
+    }
+
     &--smaller {
       font-size: 4rem;
+      margin-top: 0;
+      width: auto;
+
+      @include sm {
+        font-size: 1rem;
+      }
+      @include md {
+        font-size: 2rem;
+      }
+      @include lg {
+        font-size: 3rem;
+      }
+      @include xl {
+        font-size: 4rem;
+      }
     }
   }
 
@@ -41,5 +94,18 @@
     margin-top: 0.5rem;
     font-family: $font-header-subtitle;
     font-weight: $font-weight-header-title;
+
+    @include sm {
+      font-size: 0.8rem;
+    }
+    @include md {
+      font-size: 1rem;
+    }
+    @include lg {
+      font-size: 1.2rem;
+    }
+    @include xl {
+      font-size: 1.2rem;
+    }
   }
 }

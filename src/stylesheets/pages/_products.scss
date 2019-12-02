@@ -3,6 +3,18 @@
   height: 100%;
   display: flex;
   position: relative;
+  @include sm {
+    flex-direction: column;
+  }
+  @include md {
+    flex-direction: column;
+  }
+  @include lg {
+    width: 100%;
+  }
+  @include xl {
+    width: 100%;
+  }
 
   &__btn {
     position: absolute;

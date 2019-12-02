@@ -6,10 +6,21 @@
   position: relative;
   border-radius: $border-radius-main;
   overflow-y: auto;
+  box-shadow: $box-shadow-inset;
 }
 
 .about-textblock {
   margin: 3rem 5rem 2rem 4rem;
+
+  @include sm {
+    margin: 1rem 2rem 1rem 2rem;
+  }
+  @include md {
+    margin: 1rem 2rem 1rem 2rem;
+  }
+  @include lg {
+    margin: 1rem 2rem 1rem 2rem;
+  }
 
   &__title {
     font-size: 2rem;
@@ -21,6 +32,19 @@
     font-family: $font-header-title;
     font-weight: $font-weight-header-title;
     border-bottom: 3px solid $color-accent;
+
+    @include sm {
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+    @include md {
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+    @include lg {
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
   }
 
   &__text {
@@ -30,6 +54,19 @@
     color: $color-text-medium;
     font-family: $font-text-body;
     font-weight: $font-weight-text-body;
+
+    @include sm {
+      font-size: 0.8rem;
+      margin-left: 1rem;
+    }
+    @include md {
+      font-size: 0.8rem;
+      margin-left: 1rem;
+    }
+    @include lg {
+      font-size: 0.8rem;
+      margin-left: 1rem;
+    }
   }
 
   &__img {

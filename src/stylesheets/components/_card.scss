@@ -1,10 +1,23 @@
 .product-card {
-  height: 80%;
-  width: 30%;
+  height: 85%;
   background-color: $color-background-bright;
   margin-right: 3rem;
   position: relative;
   border-radius: $border-radius-main;
+  box-shadow: $box-shadow-inset;
+
+  @include sm {
+    width: 80%;
+  }
+  @include md {
+    width: 80%;
+  }
+  @include lg {
+    width: 90%;
+  }
+  @include xl {
+    width: 35%;
+  }
 
   &:first-child {
     margin-left: 0rem;
@@ -40,6 +53,7 @@
 
     & img {
       max-width: 100%;
+      max-height: 115%;
     }
   }
 }
@@ -49,19 +63,58 @@
   margin: auto;
   margin-top: 30%;
 
+  @include ex {
+    margin-top: 23%;
+  }
+
   &__title {
-    padding-top: 2rem;
-    margin-bottom: .8rem;
+    margin-bottom: 0.8rem;
     font-family: $font-text-title;
     font-weight: $font-weight-text-title;
     color: $color-text-dark;
     font-size: 1.4rem;
+    padding-top: 1rem;
+
+    @include sm {
+      padding-top: 1rem;
+    }
+    @include md {
+      padding-top: 1rem;
+    }
+
+    @include xl {
+      padding-top: 1rem;
+    }
+    @include ex {
+      padding-top: 1rem;
+    }
   }
 
   &__text {
     color: $color-text-medium;
     font-family: $font-text-body;
     font-weight: $font-weight-text-body;
-    font-size: 1rem;
+    font-size: 0.8rem;
+    margin: 0.5rem;
+    @include sm {
+      font-size: 0.8rem;
+      margin: 0.5rem;
+    }
+    @include md {
+      font-size: 0.8rem;
+      margin: 0.5rem;
+    }
+    @include lg {
+      font-size: 0.8rem;
+      margin: 0.5rem;
+    }
+    @include xl {
+      font-size: 1rem;
+      margin: 1rem;
+    }
+    @include ex {
+      font-size: 0.8rem;
+      margin: 0.5rem;
+    }
   }
 }

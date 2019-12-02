@@ -8,7 +8,7 @@
   <edit-form contents.bind="products" area.bind="area"></edit-form>
   <div class="products">
     <product-card
-      repeat.for="product of products | take:slice"
+      repeat.for="product of outputArr"
       title.bind="product.title"
       img.bind="product.img"
       bodytitle.bind="product.body_title"

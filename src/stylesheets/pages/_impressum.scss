@@ -10,6 +10,20 @@
   display: flex;
   flex-direction: column;
   @include mdc-notched-outline-color($color-background-dark);
+  box-shadow: $box-shadow-inset;
+
+  @include sm {
+    padding: 1.2rem;
+    padding-top: 3rem;
+  }
+  @include md {
+    padding: 1.2rem;
+    padding-top: 3rem;
+  }
+  @include lg {
+    padding: 1.2rem;
+    padding-top: 3rem;
+  }
 
   &__title {
     font-size: 2rem;
@@ -21,6 +35,16 @@
     font-family: $font-header-title;
     font-weight: $font-weight-header-title;
     border-bottom: 3px solid $color-accent;
+
+    @include sm {
+      font-size: 1.2rem;
+    }
+    @include md {
+      font-size: 1.2rem;
+    }
+    @include lg {
+      font-size: 1.2rem;
+    }
   }
 
   &__text {
@@ -29,5 +53,17 @@
     color: $color-text-medium;
     font-family: $font-text-body;
     font-weight: $font-weight-text-body;
+
+    @include sm {
+      font-size: 1rem;
+      margin-left: 1rem;
+    }
+    @include md {
+      font-size: 1rem;
+      margin-left: 1rem;
+    }
+    @include lg {
+      font-size: 1rem;
+    }
   }
 }

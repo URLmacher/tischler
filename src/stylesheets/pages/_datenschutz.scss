@@ -1,4 +1,4 @@
-.datenschutz{
+.datenschutz {
   height: 100%;
   width: 90%;
   background-color: $color-background-bright;
@@ -6,10 +6,24 @@
   position: relative;
   border-radius: $border-radius-main;
   overflow-y: auto;
+  box-shadow: $box-shadow-inset;
 }
 
 .datenschutz-textblock {
   margin: 3rem 5rem 2rem 4rem;
+    overflow-x: hidden;
+  @include sm {
+    margin: 3rem 3rem 2rem 2rem;
+    overflow-x: hidden;
+  }
+  @include md {
+    margin: 3rem 3rem 2rem 2rem;
+    overflow-x: hidden;
+  }
+  @include lg {
+    margin: 3rem 3rem 2rem 2rem;
+    overflow-x: hidden;
+  }
 
   &__title {
     font-size: 2rem;
@@ -21,6 +35,22 @@
     font-family: $font-header-title;
     font-weight: $font-weight-header-title;
     border-bottom: 3px solid $color-accent;
+    @include sm {
+      font-size: 1rem;
+      margin-top: 2rem;
+      white-space: normal;
+      width: auto;
+    }
+    @include md {
+      font-size: 1rem;
+      margin-top: 2rem;
+      white-space: normal;
+      width: auto;
+    }
+    @include lg {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
   }
 
   &__text {
@@ -30,5 +60,18 @@
     color: $color-text-medium;
     font-family: $font-text-body;
     font-weight: $font-weight-text-body;
+
+    @include sm {
+      font-size: 0.8rem;
+      margin-left: 0;
+    }
+    @include md {
+      font-size: 0.8rem;
+      margin-left: 0;
+    }
+    @include lg {
+      font-size: 1.2rem;
+      margin-left: 0.5rem;
+    }
   }
 }

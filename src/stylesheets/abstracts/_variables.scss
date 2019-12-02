@@ -4,25 +4,48 @@
 
 /// Main 
 /// @type Color
-$color-main: #cfc9c9 !default;
-$color-background-dark: #303030;
-$color-background-bright: #fcfcfc;
-$color-background-semi-transparent:  rgba(245, 245, 245, 0.835);
-$color-background-overlay: #30303071;
-$color-text-dark: #444343;
-$color-text-medium: #696969;
-$color-accent: #888888;
+// $color-main: #cfc9c9 !default;
+// $color-background-dark: #303030;
+// $color-background-bright: #fcfcfc;
+// $color-background-semi-transparent:  rgba(245, 245, 245, 0.835);
+// $color-background-overlay: #30303071;
+// $color-text-dark: #444343;
+// $color-text-medium: #696969;
+// $color-accent: #888888;
+// $color-signal-red: red;
+// $color-signal-green: green;
+$color-main: rgb(214, 199, 180) !default;
+$color-background-dark: rgb(85, 63, 63);
+$color-background-bright: rgb(249, 250, 245);
+$color-background-semi-transparent:  rgba(224, 224, 224, 0.93);
+$color-background-overlay: rgba(77, 39, 6, 0.678);
+$color-text-dark: #141414;
+$color-text-medium: #494949;
+$color-accent: rgb(250, 237, 213);
 $color-signal-red: red;
 $color-signal-green: green;
 
 /// Background
 /// @type Gradient
-$gradient-background: radial-gradient(circle, rgba(0, 0, 0, 0.8799894957983193) 0%, #808080 86%);
+$gradient-background: radial-gradient(circle, $color-background-dark 0%, $color-background-bright 76%);
 $transition-standard: all .2s linear;
 
 
 $border-radius-main: 2px;
 $box-shadow-main: 15px 15px 15px 0px rgba(0, 0, 0, 0.75);
+$box-shadow-inset: inset 0 0 10px #000000;
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 500px;
+
+// Small tablets (portrait view)
+$screen-md-min: 800px;
+
+// Tablets and small desktops
+$screen-lg-min: 1200px;
+
+// Large tablets and desktops
+$screen-xl-min: 12500px;
 
 /// Regular font family
 /// @type List

@@ -4,7 +4,7 @@
       <div class="navigation__btn-close" click.trigger="closeNav($event)"></div>
       <ul class="navlinks-main">
         <li
-          class="navlinks-main__nav-li"
+          class="navlinks-main__nav-li ${navOpen ? 'navlinks-main__nav-li--open' : ''}"
           repeat.for="mainLink of mainLinks"
           if.bind="mainLink.config.main"
           class="${nav.isActive ? 'active' : ''}"
@@ -25,5 +25,9 @@
       </ul>
     </div>
   </nav>
-  <div class="navigation__btn-open" click.trigger="openNav()" ref="openNavBtn"></div>
+   <div class="mobile-icon ${navOpen ? 'nav-anim' : ''}" click.trigger="openNav()" ref="openNavBtn">
+			<div class="mobile-icon-line"></div>
+			<div class="mobile-icon-line"></div>
+			<div class="mobile-icon-line"></div>
+		</div>
 </template>

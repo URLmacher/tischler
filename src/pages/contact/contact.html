@@ -23,7 +23,7 @@
       <text-area
         class="contact__input"
         value.two-way="textArea.value"
-        label.bind="Nachricht"
+        label.bind="textArea.label"
         error.bind="textArea.error"
         error-text.bind="textArea.errorText"
       ></text-area>
@@ -40,7 +40,7 @@
     >
       <h2 class="contact__confirm-title">${confirmation.title}</h2>
       <p class="contact__confirm-text">${confirmation.text}</p>
-      <button-standard
+      <button-standard class="contact__confirm-btn" 
         text.bind="backBtn.text"
         event.bind="backBtn.event"
       ></button-standard>

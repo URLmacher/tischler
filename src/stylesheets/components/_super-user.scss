@@ -14,12 +14,29 @@
     font-family: $font-header-subtitle;
     color: $color-text-dark;
     margin-left: 5rem;
+    font-size: 1.2rem;
+
+    @include sm {
+      margin-left: 2rem;
+      font-size: 1rem;
+    }
+    @include md {
+      margin-left: 2rem;
+      font-size: 1rem;
+    }
+
+    @include xl {
+
+    }
+    @include ex {
+ 
+    }
   }
 
   &__name-span {
     font-family: $font-header-subtitle;
     color: $color-text-medium;
-    margin-left: .5rem;
+    margin-left: 0.5rem;
   }
 
   &__btn-box {
@@ -28,6 +45,13 @@
     height: 100%;
     display: flex;
     align-items: center;
+
+    @include sm {
+      right: 2rem;
+    }
+    @include md {
+      right: 2rem;
+    }
   }
 
   &__btn {

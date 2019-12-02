@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__.'/src/Psr4AutoloaderClass.php';
 require_once __DIR__.'/anticors.php';
-$config = include('config.php');
+$config = include('CONFIG.php');
 
 $answer = new stdClass();
 $answer->success = false;

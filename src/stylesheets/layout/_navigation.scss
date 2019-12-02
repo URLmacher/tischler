@@ -17,6 +17,8 @@
   }
 
   &__nav {
+    box-shadow: $box-shadow-main;
+    border-radius: $border-radius-main;
     width: 0;
     height: 100%;
     background-color: $color-background-dark;
@@ -24,43 +26,30 @@
     opacity: 0;
     z-index: 18;
     position: relative;
+    transition: $transition-standard;
 
     &--open {
       width: 25%;
       visibility: visible;
       opacity: 1;
+
+      @include sm {
+        width: 70%;
+      }
+      @include md {
+        width: 50%;
+      }
+      @include lg {
+        width: 30%;
+      }
+      @include xl {
+        width: 25%;
+      }
     }
   }
 
   &--open {
-    height: 100%;
     width: 100%;
-  }
-
-  &__btn-open {
-    position: absolute;
-    height: 4rem;
-    width: 4rem;
-    z-index: 13;
-    margin-left: 0.5rem;
-    top: 50%;
-    transform: translateY(-50%);
-    background-image: url('../assets/icons/menu-24px.svg');
-    background-size: cover;
-    cursor: pointer;
-  }
-
-  &__btn-close {
-    position: absolute;
-    height: 4rem;
-    width: 4rem;
-    z-index: 20;
-    margin-left: 0.5rem;
-    top: 50%;
-    transform: translateY(-50%);
-    background-image: url('../assets/icons/close-24px.svg');
-    background-size: cover;
-    cursor: pointer;
   }
 }
 
@@ -74,9 +63,30 @@
   padding-bottom: 20%;
 
   &__nav-li {
+    opacity: 0;
+    visibility: hidden;
+    transition: $transition-standard;
     font-family: $font-header-title;
     font-weight: $font-weight-header-title;
     font-size: 2rem;
+
+    @include sm {
+      font-size: 1.2rem;
+    }
+    @include md {
+      font-size: 1.7rem;
+    }
+    @include lg {
+      font-size: 1.8rem;
+    }
+    @include xl {
+      font-size: 2rem;
+    }
+
+    &--open {
+      opacity: 1;
+      visibility: visible;
+    }
   }
 
   &__nav-a {
@@ -137,4 +147,79 @@
       border-bottom: 2px solid $color-accent;
     }
   }
+}
+
+.mobile-icon {
+  display: block;
+  cursor: pointer;
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  z-index: 13;
+  margin-left: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  z-index: 100;
+  transition: $transition-standard;
+  @include sm {
+    width: 2rem;
+    height: 2rem;
+  }
+  @include md {
+    width: 2rem;
+    height: 2rem;
+  }
+  @include lg {
+  }
+  @include xl {
+  }
+}
+.mobile-icon-line {
+  width: 100%;
+  height: 0.5rem;
+  background: $color-text-dark;
+  border-radius: $border-radius-main;
+  pointer-events: none;
+  transition: $transition-standard;
+
+  @include sm {
+    height: 0.3rem;
+  }
+  @include md {
+    height: 0.3rem;
+  }
+}
+.mobile-icon-line ~ .mobile-icon-line {
+  margin-top: 0.7rem;
+}
+
+.nav-anim :nth-child(1) {
+  transform: rotate(45deg) translate(1.4rem, 1.4rem);
+  transition: $transition-standard;
+  @include sm {
+    transform: rotate(45deg) translate(0.7rem, 0.6rem);
+  }
+  @include md {
+    transform: rotate(45deg) translate(0.7rem, 0.6rem);
+  }
+}
+.nav-anim :nth-child(2) {
+  position: absolute;
+  opacity: 0;
+  top: 1.1rem;
+  margin-left: 72px;
+  background-color: $color-accent;
+  transition: $transition-standard;
+}
+.nav-anim :nth-child(3) {
+  transform: rotate(-45deg) translate(-0.5rem, 0.5rem);
+  @include sm {
+    transform: rotate(-45deg) translate(0.1rem, -0.1rem);
+  }
+  @include md {
+    transform: rotate(-45deg) translate(0.1rem, -0.1rem);
+  }
+  transition: $transition-standard;
 }

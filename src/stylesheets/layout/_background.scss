@@ -1,20 +1,50 @@
 .background {
   background-color: $color-main;
   position: relative;
-  margin: 5rem;
-  height: calc(100vh - 10rem);
+
   border-radius: $border-radius-main;
   box-shadow: $box-shadow-main;
   display: flex;
   justify-content: left;
   align-items: center;
   background-image: url('../assets/images/playarea-back.svg');
+  @include sm {
+    margin: 1rem;
+    height: calc(100vh - 2rem);
+  }
+  @include md {
+    margin: 2rem;
+    height: calc(100vh - 4rem);
+  }
+  @include lg {
+    margin: 4rem;
+    height: calc(100vh - 8rem);
+  }
+  @include xl {
+    margin: 5rem;
+    height: calc(100vh - 10rem);
+  }
 
   &__content {
     width: 70%;
     height: calc(100% - 10rem);
     margin-left: 5rem;
     border-radius: $border-radius-main;
+
+    @include sm {
+      margin-left: 3rem;
+      width: 90%;
+    }
+    @include md {
+      margin-left: 3rem;
+      width: 90%;
+    }
+    @include lg {
+      width: 70%;
+    }
+    @include xl {
+      width: 70%;
+    }
   }
 
   &__logo {
@@ -27,5 +57,33 @@
     bottom: 2.8rem;
     right: 10.5rem;
     z-index: 400;
+
+    @include sm {
+      width: 4rem;
+      height: 4rem;
+      margin: auto;
+      bottom: 2rem;
+      left: 0;
+      right: 0;
+      bottom: -1rem;
+    }
+    @include md {
+      width: 4rem;
+      height: 4rem;
+      margin: auto;
+      bottom: 2rem;
+      left: 0;
+      right: 0;
+      bottom: -1rem;
+    }
+    @include lg {
+      width: 4rem;
+      height: 4rem;
+      margin: auto;
+      bottom: 2rem;
+      left: 0;
+      right: 0;
+      bottom: -1rem;
+    }
   }
 }
