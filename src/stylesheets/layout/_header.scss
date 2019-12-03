@@ -3,8 +3,6 @@
   right: 10rem;
   top: 20%;
   background-color: $color-background-dark;
-  height: 30vh;
-  width: 30vw;
   color: $color-main;
   text-align: center;
   border-radius: $border-radius-main;
@@ -14,13 +12,12 @@
   @include sm {
     right: 3rem;
     top: 5%;
-    height: 30vh;
-    width: 40vw;
+    width: 50vw;
   }
   @include md {
     right: 4rem;
     top: 7%;
-    height: 30vh;
+    width: 50vw;
   }
   @include lg {
     right: 6rem;
@@ -29,14 +26,13 @@
 
   &--smaller {
     height: auto;
-    width:auto;
- padding: 1rem;
+    padding: 1rem;
 
     @include sm {
       height: auto;
     }
     @include md {
-       height: auto;
+      height: auto;
     }
     @include lg {
     }
@@ -44,27 +40,27 @@
 
   &__title {
     white-space: nowrap;
-    border-bottom: 0.6rem $color-accent solid;
+    border-bottom: 0.2rem $color-accent solid;
     line-height: 1;
-    width: 22vw;
-    margin: auto;
     margin-top: 2rem;
     font-family: $font-header-title;
     font-weight: $font-weight-header-title;
+    white-space: nowrap;
+    text-align: right;
 
     @include sm {
-      font-size: 2rem;
-      border-bottom: 0.3rem $color-accent solid;
+      font-size: 1.7rem;
+      border-bottom: 0.1rem $color-accent solid;
     }
     @include md {
-      font-size: 2rem;
-      border-bottom: 0.3rem $color-accent solid;
+      font-size: 1.7rem;
+      border-bottom: 0.1rem $color-accent solid;
     }
     @include lg {
-      font-size: 4rem;
+      font-size: 2.9rem;
     }
     @include xl {
-      font-size: 6rem;
+      font-size: 3.5rem;
     }
 
     &--smaller {
@@ -89,7 +85,6 @@
 
   &__subtitle {
     text-align: right;
-    width: 22vw;
     margin: auto;
     margin-top: 0.5rem;
     font-family: $font-header-subtitle;
@@ -99,13 +94,43 @@
       font-size: 0.8rem;
     }
     @include md {
-      font-size: 1rem;
+      font-size: 0.8rem;
     }
     @include lg {
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
     @include xl {
       font-size: 1.2rem;
     }
   }
+
+  &__btn-box {
+    height: min-content;
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  &__btn:first-child {
+    margin-right: 1rem !important;
+  }
+  
+  &__text-box {
+    // width: 80%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
 }
+
+
+  .mdc-button {
+    @include sm {
+      font-size: 0.7rem !important;
+    }
+    @include md {
+      font-size: 0.7rem !important;
+    }
+  }

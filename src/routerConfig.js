@@ -6,10 +6,9 @@ export let routerConfig = [
     moduleId: PLATFORM.moduleName('pages/home/home'),
     nav: true,
     main: true,
-    title: 'Tischler',
+    title: 'Tischlerei Moser',
     navtitle: 'Home',
-    subtitle:
-      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.'
+    subtitle: 'JEDES MÖBELSTÜCK IST FÜR UNS WIE EIN KUNSTSTÜCK'
   },
   {
     route: 'products',

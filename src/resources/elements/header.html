@@ -1,6 +1,21 @@
 <template>
+  <require from="resources/elements/button-standard"></require>
   <div class="header ${subtitle ? '' : 'header--smaller'}">
-    <h1 class="header__title ${subtitle ? '' : 'header__title--smaller'}">${title}</h1>
-    <p class="header__subtitle">${subtitle}</p>
+    <div class="header__text-box">
+      <h1 class="header__title ${subtitle ? '' : 'header__title--smaller'}">
+        ${title}
+      </h1>
+      <p class="header__subtitle">${subtitle}</p>
+    </div>
+    <div if.bind="subtitle" class="header__btn-box">
+      <button-standard
+        class="header__btn"
+        text.bind="`Produkte`"
+      ></button-standard>
+      <button-standard
+        class="header__btn"
+        text.bind="`Kontakt`"
+      ></button-standard>
+    </div>
   </div>
 </template>
