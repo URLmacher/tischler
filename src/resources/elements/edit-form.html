@@ -4,6 +4,7 @@
 
   <div class="edit-form ${formOpen ? 'edit-form--open' : 'edit-form--closed'}">
     <h3 if.bind="confirmMsg" class="edit-form__msg">${confirmMsg}</h3>
+    <h3 if.bind="!contents" class="edit-form__title--special">Kein editierbarer Inhalt auf dieser Seite</h3>
     <form if.bind="!confirmMsg" repeat.for="content of contents" class="edit-form__form">
       <h3 class="edit-form__title">Eintrag ${$index+1}</h3>
       <input-text

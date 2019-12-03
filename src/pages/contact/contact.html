@@ -3,6 +3,11 @@
   <require from="resources/elements/input-email"></require>
   <require from="resources/elements/text-area"></require>
   <require from="resources/elements/button-standard"></require>
+  <require from="resources/elements/edit-form"></require>
+  <require from="resources/elements/add-form"></require>
+
+  <add-form></add-form>
+  <edit-form></edit-form>
   <div class="contact">
     <form
       class="contact__form ${msgReceived ? 'contact--hide' : 'contact--show'}"
@@ -40,12 +45,15 @@
     >
       <h2 class="contact__confirm-title">${confirmation.title}</h2>
       <p class="contact__confirm-text">${confirmation.text}</p>
-      <button-standard class="contact__confirm-btn" 
+      <button-standard
+        class="contact__confirm-btn"
         text.bind="backBtn.text"
         event.bind="backBtn.event"
       ></button-standard>
     </div>
-    <div class="contact__incitement ${msgReceived ? 'contact--hide' : 'contact--show'}">
+    <div
+      class="contact__incitement ${msgReceived ? 'contact--hide' : 'contact--show'}"
+    >
       <h2 class="contact__confirm-title">${incitement.title}</h2>
       <p class="contact__confirm-text">${incitement.text}</p>
     </div>

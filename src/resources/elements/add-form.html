@@ -6,6 +6,7 @@
     <h3 if.bind="confirmMsg" class="add-form__msg">${confirmMsg}</h3>
     <form if.bind="!confirmMsg" class="add-form__form">
        <h3 class="edit-form__title">Neuer Eintrag</h3>
+       <h3 if.bind="!content" class="edit-form__title">Kein editierbarer Inhalt auf dieser Seite</h3>
       <input-text
         if.bind="content.imgFlag"
         class="add-form__textfield"

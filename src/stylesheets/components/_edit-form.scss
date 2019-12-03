@@ -37,6 +37,14 @@
     color: $color-text-dark;
     font-family: $font-header-subtitle;
     font-weight: $font-weight-text-title;
+
+    &--special {
+      position: absolute;
+      display: block;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-top: 6rem;
+    }
   }
 
   &__textfield {
