@@ -11,6 +11,7 @@ export class ButtonStandard {
 
   constructor(eventAggregator) {
     this.ea = eventAggregator;
+    this.event = false;
   }
 
   attached() {
@@ -18,6 +19,8 @@ export class ButtonStandard {
   }
 
   formSubmit() {
-    this.ea.publish(this.event, 'submit');
+    if (this.event) {
+      this.ea.publish(this.event, 'submit');
+    }
   }
 }
