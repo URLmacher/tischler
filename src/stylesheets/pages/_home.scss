@@ -8,12 +8,33 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.home-img {
-  height: 100%;
+.home {
+  position: relative;
+  overflow: hidden;
   width: 90%;
+  height: 100%;
   border-radius: $border-radius-main;
   box-shadow: $box-shadow-inset;
-  background-image: url('../assets/images/img_back_home_placeholder2.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
+
+  &:after {
+    content: '';
+    position: absolute;
+    background: rgba(58, 49, 49, 0.34);
+    border-radius: 5px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: $border-radius-main;
+    box-shadow: $box-shadow-inset;
+  }
+
+  &__video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    pointer-events: none;
+    object-fit: contain;
+  }
 }
