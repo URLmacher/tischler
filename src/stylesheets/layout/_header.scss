@@ -1,6 +1,5 @@
 .header {
   position: absolute;
-  right: 10rem;
   top: 20%;
   background-color: $color-cards-and-header;
   color: $color-main;
@@ -8,6 +7,21 @@
   border-radius: $border-radius-main;
   z-index: 2;
   box-shadow: $box-shadow-main;
+  right: 10rem;
+
+  &__animate {
+    animation: comeinxl 0.8s linear;
+
+    @include sm {
+      animation: comeinsm 0.8s linear;
+    }
+    @include md {
+      animation: comeinmd 0.8s linear;
+    }
+    @include lg {
+      animation: comeinlg 0.8s linear;
+    }
+  }
 
   @include sm {
     right: 3rem;
@@ -110,11 +124,11 @@
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
-  
+
   &__btn:first-child {
     margin-right: 1rem !important;
   }
-  
+
   &__text-box {
     // width: 80%;
     padding-left: 2rem;
@@ -125,12 +139,48 @@
   }
 }
 
-
-  .mdc-button {
-    @include sm {
-      font-size: 0.7rem !important;
-    }
-    @include md {
-      font-size: 0.7rem !important;
-    }
+.mdc-button {
+  @include sm {
+    font-size: 0.7rem !important;
   }
+  @include md {
+    font-size: 0.7rem !important;
+  }
+}
+
+@keyframes comeinxl {
+  0% {
+    right: 8rem;
+  }
+
+  100% {
+    right: 10rem;
+  }
+}
+@keyframes comeinlg {
+  0% {
+    right: 4rem;
+  }
+
+  100% {
+    right: 6rem;
+  }
+}
+@keyframes comeinmd {
+  0% {
+    right: 2rem;
+  }
+
+  100% {
+    right: 4rem;
+  }
+}
+@keyframes comeinsm {
+  0% {
+    right: 1.5rem;
+  }
+
+  100% {
+    right: 3rem;
+  }
+}

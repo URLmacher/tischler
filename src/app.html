@@ -6,7 +6,7 @@
   <super-user if.bind="loggedIn" id.bind="sessionId" username.bind="username"></super-user>
   <header title.bind="currentSiteTitle" subtitle.bind="currentSiteSubtitle"></header>
   <div class="background">
-    <div class="background__logo"></div>
+    <div class="background__logo" click.trigger="goHome()"></div>
     <navigation nav-open.two-way="navOpen" main-links.bind="router.navigation"></navigation>
 
     <div class="background__content">

@@ -6,6 +6,7 @@ import { EventAggregator } from 'aurelia-event-aggregator';
 export class Header {
   @bindable title;
   @bindable subtitle;
+  firstLoad = false;
 
   constructor(eventAggregator) {
     this.ea = eventAggregator;
@@ -18,5 +19,9 @@ export class Header {
     this.ea.subscribe('redirectToContact', value => {
       window.location.href = `${baseUrl}/contact`;
     });
+    this.ea.subscribe('router:navigation:complete', value => {
+      this.domheader.classList.remove('header__animate');
+    });
+    this.firstLoad = true;
   }
 }

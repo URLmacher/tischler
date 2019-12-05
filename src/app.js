@@ -27,8 +27,10 @@ export class App {
   }
 
   configureRouter(config, router) {
-    this.router = router; 
+    this.router = router;
     config.title = 'Tischler';
+    config.options.pushState = true;
+    config.options.root = '/';
     config.map(routerConfig);
   }
 
@@ -40,5 +42,9 @@ export class App {
       this.username = data.username;
       this.sessionId = data.sessionId;
     }
+  }
+
+  goHome() {
+    window.location.href = `${baseUrl}`;
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <require from="resources/elements/button-standard"></require>
-  <div class="header ${subtitle ? '' : 'header--smaller'}">
+  <div class="header ${subtitle ? '' : 'header--smaller'} ${firstLoad ? 'header__animate' : ''}" ref="domheader">
     <div class="header__text-box">
       <h1 class="header__title ${subtitle ? '' : 'header__title--smaller'}">
         ${title}
