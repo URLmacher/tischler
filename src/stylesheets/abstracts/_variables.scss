@@ -14,23 +14,23 @@
 // $color-accent: #888888;
 // $color-signal-red: red;
 // $color-signal-green: green;
-$color-main: rgb(214, 199, 180) !default;
-$color-background-dark: rgb(85, 63, 63);
-$color-background-bright: rgb(249, 250, 245);
+$color-main: #363642;
+$color-background-dark: #363642;
+$color-background-bright: #FFE4CF;
+$color-cards-and-header:#b9a499;
 $color-background-semi-transparent:  rgba(224, 224, 224, 0.93);
-$color-background-overlay: rgba(77, 39, 6, 0.678);
-$color-text-dark: #141414;
+$color-background-overlay: rgba(39, 33, 28, 0.83);
+$color-text-dark: #221D23;
 $color-text-medium: #494949;
-$color-accent: rgb(250, 237, 213);
-$color-signal-red: red;
-$color-signal-green: green;
+$color-accent: #363642;
+$color-signal-red: rgb(211, 49, 49);
 
 /// Background
 /// @type Gradient
-$gradient-background: radial-gradient(circle, $color-background-dark 0%, $color-background-bright 76%);
+$gradient-background: radial-gradient(ellipse at center, rgba(185,164,153,1) 0%,rgba(255,228,207,1) 0%,rgba(54,54,66,1) 100%);
 $transition-standard: all .2s linear;
 
-
+ 
 $border-radius-main: 2px;
 $box-shadow-main: 15px 15px 15px 0px rgba(0, 0, 0, 0.75);
 $box-shadow-inset: inset 0 0 10px #000000;

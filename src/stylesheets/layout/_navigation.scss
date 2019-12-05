@@ -9,7 +9,7 @@
   &__hr {
     width: 40%;
     height: 0.4rem;
-    background-color: $color-accent;
+    background-color: $color-background-bright;
     margin: 0;
     margin-left: 25%;
     margin-top: -0.2rem;
@@ -21,7 +21,7 @@
     border-radius: $border-radius-main;
     width: 0;
     height: 100%;
-    background-color: $color-background-dark;
+    background-color: $color-cards-and-header;
     visibility: hidden;
     opacity: 0;
     z-index: 18;
@@ -179,7 +179,7 @@
 .mobile-icon-line {
   width: 100%;
   height: 0.5rem;
-  background: $color-text-dark;
+  background: $color-background-bright;
   border-radius: $border-radius-main;
   pointer-events: none;
   transition: $transition-standard;

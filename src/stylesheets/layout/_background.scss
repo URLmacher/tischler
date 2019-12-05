@@ -48,14 +48,14 @@
   }
 
   &__logo {
-    width: 10rem;
+    width: 11rem;
     height: 10rem;
-    background-image: url('../assets/icons/logo.svg');
+    background-image: url('../assets/icons/logo3.svg');
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
-    bottom: 2.8rem;
-    right: 10.5rem;
+    bottom: 2.8rem; 
+    right: 12%;
     z-index: 400;
 
     @include sm {
