@@ -4,5 +4,6 @@ return array(
     'email-adress' => '',
     'email-password' => '',
     'db-login' => 'root',
-    'db-pass' => ''
-); 
+    'db-pass' => '',
+    'db-name' => 'tischler'
+);

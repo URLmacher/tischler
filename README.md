@@ -3,7 +3,8 @@
 # Quick Start
 - Repo downloaden
 - Server und MySQL starten
-- Datenbank 'tischler' von der SQL-File im Ordner database importieren
+- erstellen Sie eine Datenbank mit dem Namen 'tischler' und der Kollation utf8_general_ci
+- Datenbank von der SQL-File im Ordner database importieren
 - 'npm install' im Projektordner
 - Konfiguration in src/CONFIG.js*
     * baseUrl: http://localhost/ + der Pfad zum 'dist' Ordner der Installation + /
@@ -18,6 +19,7 @@
     * email-password: Das Passwort zum Email-Account
     * db-login: Der Datenbank-Benutzername
     * db-pass: Das Passwort zur Datenbank
+    * db-name: Falls anders als 'tischler'
 - 'npm run build:dev' im Projektordner
 - Website unter http://localhost/ + der Pfad zum 'dist' Ordner der Installation + / aufrufen
 - der Zugang für Superuser ist unter http://localhost/ + der Pfad zum 'dist' Ordner der Installation + /#/admin erreichbar

@@ -1,5 +1,4 @@
 <?php
-require_once __DIR__ . '/src/Psr4AutoloaderClass.php';
 require_once __DIR__ . '/anticors.php';
 $answer = new stdClass();
 $answer->success = false;
@@ -9,9 +8,6 @@ $name;
 $password;
 $json = file_get_contents('php://input');
 $jsondata = json_decode($json);
-
-checkPassword('admin', '1111');
-checkUsername('admin');
 
 if (!empty($jsondata->name)) {
     $name = filter_var(trim($jsondata->name), FILTER_SANITIZE_STRING);
