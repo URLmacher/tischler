@@ -21,8 +21,10 @@
 - 'npm run build:dev' im Projektordner
 - Website unter http://localhost/ + der Pfad zum 'dist' Ordner der Installation + / aufrufen
 - der Zugang für Superuser ist unter http://localhost/ + der Pfad zum 'dist' Ordner der Installation + /#/admin erreichbar
-    * Username: admin
-    * Passwort: 1111
+    (der Hashtag ist wegen dem Pushstate, der Server müsste dafür konfiguriert werden um die Links ohne # funktionieren zu lassen)
+    - Login Daten SuperUser:
+        * Username: admin
+        * Passwort: 1111
 
 - *Wenn Sie einen Virtual Host einrichten wollen:
     - httpd-vhosts.conf:

@@ -14,14 +14,16 @@ export class Header {
 
   attached() {
     this.ea.subscribe('redirectToProducts', value => {
-      window.location.href = `${baseUrl}/products`;
+      window.location.href = `${baseUrl}/#/products`;
     });
     this.ea.subscribe('redirectToContact', value => {
-      window.location.href = `${baseUrl}/contact`;
+      window.location.href = `${baseUrl}/#/contact`;
     });
-    this.ea.subscribe('router:navigation:complete', value => {
+    this.ea.subscribe('router:navigation:processing', value => {
       this.domheader.classList.remove('header__animate');
     });
-    this.firstLoad = true;
+    this.ea.subscribe('router:navigation:success', value => {
+      this.domheader.classList.add('header__animate');
+    });
   }
 }

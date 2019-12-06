@@ -10,16 +10,16 @@
   right: 10rem;
 
   &__animate {
-    animation: comeinxl 0.8s linear;
+    animation: comeinxl 0.5s linear;
 
     @include sm {
-      animation: comeinsm 0.8s linear;
+      animation: comeinsm 0.5s linear;
     }
     @include md {
-      animation: comeinmd 0.8s linear;
+      animation: comeinmd 0.5s linear;
     }
     @include lg {
-      animation: comeinlg 0.8s linear;
+      animation: comeinlg 0.5s linear;
     }
   }
 
