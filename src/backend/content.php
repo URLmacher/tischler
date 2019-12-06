@@ -2,7 +2,6 @@
 require_once __DIR__ . '/anticors.php';
 $answer = new stdClass();
 
-// Todo : only allow content tables
 if (!empty($_GET['area'])) {
   $area = filter_var(trim($_GET['area']), FILTER_SANITIZE_STRING);
 

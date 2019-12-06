@@ -5,4 +5,4 @@ return array(
     'email-password' => 'w3rbBRXj_R5-YCs=',
     'db-login' => 'root',
     'db-pass' => ''
-);
+); 

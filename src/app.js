@@ -3,7 +3,7 @@ import { EventAggregator } from 'aurelia-event-aggregator';
 import { routerConfig } from 'routerConfig.js';
 import { RouterEvent } from 'aurelia-router';
 import { autoinject } from 'aurelia-framework';
-import { baseUrl } from 'CONFIG';
+import { baseUrl, relativeUrl } from 'CONFIG';
 
 @autoinject
 export class App {
@@ -29,8 +29,8 @@ export class App {
   configureRouter(config, router) {
     this.router = router;
     config.title = 'Tischler';
-    config.options.pushState = true;
-    config.options.root = '/';
+    config.options.pushState = false;
+    config.options.root = `${relativeUrl}`;
     config.map(routerConfig);
   }
 
